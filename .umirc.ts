@@ -9,6 +9,13 @@ export default defineConfig({
     },
   ],
   menus: {
+    '/sunmao-editor': [
+      {
+        title: '榫卯设计器',
+        path: '/sunmao-editor',
+        children: ['SunmaoEditor/demo/dashboard.md'],
+      },
+    ],
     '/designer': [
       {
         title: '设计器',
