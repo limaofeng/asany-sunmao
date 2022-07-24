@@ -11,7 +11,13 @@
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
     "test": "umi-test",
     "test:coverage": "umi-test --coverage",
-    "prepublishOnly": "npm run build"
+    "size": "size-limit",
+    "analyze": "size-limit --why",
+    "postinstall": "husky install",
+    "prepublishOnly": "pinst --disable && npm run build",
+    "postpublish": "pinst --enable",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
+    "postversion": "git push --follow-tags"
   },
   "files": [
     "dist"
@@ -29,6 +35,22 @@
       "prettier --parser=typescript --write"
     ]
   },
+  "size-limit": [
+    {
+      "path": "dist/editor.cjs.production.min.js",
+      "limit": "2 MB",
+      "ignore": [
+        "fonteditor-core"
+      ]
+    },
+    {
+      "path": "dist/editor.esm.js",
+      "limit": "1 MB",
+      "ignore": [
+        "fonteditor-core"
+      ]
+    }
+  ],
   "dependencies": {
     "@asany/sortable": "^0.1.36",
     "@daybrush/drag": "^0.19.3",
@@ -52,6 +74,8 @@
     "@apollo/client": "^3.6.9",
     "@asany/icons": "^0.2.13",
     "@asany/tree": "^0.1.28",
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
     "@tailwindcss/postcss7-compat": "^2.2.17",
     "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^13.0.0",
@@ -63,16 +87,20 @@
     "@umijs/test": "^3.0.5",
     "antd": "^4.21.7",
     "autoprefixer": "9",
+    "conventional-changelog-cli": "^2.2.2",
     "dumi": "^1.1.0",
     "father": "^4.0.0-rc.2",
     "file-loader": "^6.2.0",
     "gh-pages": "^3.0.0",
     "graphql": "^16.5.0",
+    "husky": "^8.0.1",
     "lint-staged": "^10.0.7",
+    "pinst": "^3.0.0",
     "prettier": "^2.2.1",
     "react-dnd": "^16.0.1",
     "react-dnd-html5-backend": "^16.0.1",
     "react-dom": "^18.2.0",
+    "size-limit": "^7.0.8",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "yorkie": "^2.0.0"
   }
