@@ -33,7 +33,7 @@ export function DeviceList(props: DeviceListProps) {
         (type = {
           name: r.device[1],
           children: [],
-        })
+        }),
       );
     }
     type.children.push(r);
@@ -101,7 +101,7 @@ function DeviceScreenPicker() {
       });
       setVisible(false);
     },
-    [dispatch]
+    [dispatch],
   );
 
   return (
@@ -173,8 +173,22 @@ function ScreenViewport(props: ScreenViewportProps) {
     } else {
       _sidebarWidth = Math.max(sidebarMinWidth, _sidebarWidth);
     }
-    return { marginLeft: _sidebarWidth, display: 'flex', width: `calc(100% - ${_sidebarWidth}px)`, minHeight: `100%` };
-  }, [screenId, width, height, scrollX, scrollY, sidebarWidth, sidebarMinimizable, sidebarMinWidth]);
+    return {
+      marginLeft: _sidebarWidth,
+      display: 'flex',
+      width: `calc(100% - ${_sidebarWidth}px)`,
+      minHeight: `100%`,
+    };
+  }, [
+    screenId,
+    width,
+    height,
+    scrollX,
+    scrollY,
+    sidebarWidth,
+    sidebarMinimizable,
+    sidebarMinWidth,
+  ]);
 
   return (
     <div className="screen-viewport" style={style}>
@@ -187,8 +201,8 @@ export default React.memo(
   ScreenViewport,
   (
     { children: prevChildren, ...prevProps }: ScreenViewportProps,
-    { children: nextChildren, ...nextProps }: ScreenViewportProps
+    { children: nextChildren, ...nextProps }: ScreenViewportProps,
   ) => {
     return prevChildren === nextChildren && isEqual(prevProps, nextProps);
-  }
+  },
 );

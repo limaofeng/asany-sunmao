@@ -57,8 +57,8 @@
       &-layout-stacked,
       &-layout-inline {
         .basic-input {
-          padding-left: 7px;
           height: 32px;
+          padding-left: 7px;
           line-height: 32px;
         }
 
@@ -85,7 +85,6 @@
                 padding-left: 8px;
               }
             }
-
           }
         }
 
@@ -114,22 +113,21 @@
 
             .is_textarea {
               height: auto;
+              line-height: 30px;
               textarea {
                 min-height: 30px;
                 line-height: 22px;
               }
-              line-height: 30px;
             }
           }
         }
 
-        &.form-component-multiplewrapper:not(.inline-show-label) { 
+        &.form-component-multiplewrapper:not(.inline-show-label) {
           .smart-form-field-value {
-            padding-left: 0;
             min-height: 0;
+            padding-left: 0;
           }
         }
-
 
         &.inline-show-label {
           .smart-form-field-label {
@@ -207,6 +205,7 @@
 }
 
 .ant-input.ant-input-rimless {
+  background-color: transparent;
   border: none;
   border-bottom: 1px solid transparent;
   outline: none;
@@ -222,8 +221,6 @@
     outline: none;
     box-shadow: none;
   }
-
-  background-color: transparent;
 }
 
 .list-tree-container {
@@ -278,7 +275,6 @@
   }
 
   .svg-icon {
-
     &.drillup,
     &.folder {
       width: 24px;

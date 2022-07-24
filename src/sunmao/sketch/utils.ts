@@ -14,7 +14,7 @@ import type { Sketch } from './SketchContext';
 export function useInternalStoreSelector<Selected>(
   store: IReactComponentStoreContext,
   selector: Selector<Selected>,
-  equalityFn: EqualityFn<Selected> = defaultEqualityFn
+  equalityFn: EqualityFn<Selected> = defaultEqualityFn,
 ) {
   const [, forceRender] = useReducer((s) => s + 1, 0);
   const latestSelectedState = useRef<Selected>();
@@ -37,7 +37,7 @@ export function useInternalSelector<Selected>(
   sketch: Sketch,
   id: string,
   selector: Selector<Selected>,
-  equalityFn: EqualityFn<Selected> = defaultEqualityFn
+  equalityFn: EqualityFn<Selected> = defaultEqualityFn,
 ) {
   const [store, setStore] = useState<IReactComponentStoreContext>();
 

@@ -23,7 +23,7 @@ const deviceTypes = devices.reduce((l: SelectOptionGroup[], r: any) => {
       (type = {
         label: r.device[1],
         options: [],
-      })
+      }),
     );
   }
   (type.options as any).push({
@@ -153,7 +153,11 @@ const CurrentElementInformation = () => {
           />
           <OptionButton
             onChange={iconsHandleChange(IconsConst.Notch)}
-            icon={notchActive ? 'AsanyEditor/ConstrainProportionsOn' : 'AsanyEditor/ConstrainProportionsOff'}
+            icon={
+              notchActive
+                ? 'AsanyEditor/ConstrainProportionsOn'
+                : 'AsanyEditor/ConstrainProportionsOff'
+            }
           />
         </div>
         <div className="design-rows design-colums content-col">
@@ -170,10 +174,16 @@ const CurrentElementInformation = () => {
             disabled={radiusDisabled}
             icon="AsanyEditor/TopLeftCornerRadius"
           />
-          <OptionButton onChange={iconsHandleChange(IconsConst.Semicircle)} icon="AsanyEditor/VectorSemicircle" />
+          <OptionButton
+            onChange={iconsHandleChange(IconsConst.Semicircle)}
+            icon="AsanyEditor/VectorSemicircle"
+          />
         </div>
         {radiusDisabled && (
-          <RadiusAllSetting value={state.current[IconsConst.Radius]} onChange={handleChange(IconsConst.Radius)} />
+          <RadiusAllSetting
+            value={state.current[IconsConst.Radius]}
+            onChange={handleChange(IconsConst.Radius)}
+          />
         )}
         <div className="clipping-box">
           <Checkbox onChange={handleChange(IconsConst.Clipping)}>剪裁内容</Checkbox>

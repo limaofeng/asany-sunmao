@@ -37,7 +37,13 @@ const OptionButton = (props: OptionButtonProps) => {
   };
 
   return (
-    <Tooltip transitionName="" mouseEnterDelay={0.6} mouseLeaveDelay={0.01} placement="bottom" title={tooltip}>
+    <Tooltip
+      transitionName=""
+      mouseEnterDelay={0.6}
+      mouseLeaveDelay={0.01}
+      placement="bottom"
+      title={tooltip}
+    >
       <div
         ref={ref}
         style={style}

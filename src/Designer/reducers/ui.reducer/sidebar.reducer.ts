@@ -13,7 +13,7 @@ const defaultState: IUISidebarState = {
 
 export default function reducer(
   state: IUISidebarState,
-  action: AsanyAction<UISidebarActionType | GlobalAsanyAction>
+  action: AsanyAction<UISidebarActionType | GlobalAsanyAction>,
 ): IUISidebarState {
   if (action.type === UISidebarActionType.ChangeSymbols) {
     return { ...state, library: action.payload };

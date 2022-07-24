@@ -77,7 +77,11 @@ function Screen({ children }: ScreenProps) {
         </div>
         <div className="canvas-bg-area" />
       </div>
-      <div className={classnames('zoom-area')} ref={moveableContainer} style={{ transform: `scale(${zoom})` }}>
+      <div
+        className={classnames('zoom-area')}
+        ref={moveableContainer}
+        style={{ transform: `scale(${zoom})` }}
+      >
         <div className="canvas" style={style}>
           {children}
         </div>

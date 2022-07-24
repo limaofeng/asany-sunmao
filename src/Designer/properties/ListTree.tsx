@@ -22,7 +22,15 @@ function getSelectKeys(treeData: ListTreeNode[], key: string, keyName: string): 
 }
 
 function ListTree(props: ListTreeProps) {
-  const { reload, treeData, labelName = 'label', keyName = 'id', itemRender: ItemRender, onChange, value } = props;
+  const {
+    reload,
+    treeData,
+    labelName = 'label',
+    keyName = 'id',
+    itemRender: ItemRender,
+    onChange,
+    value,
+  } = props;
 
   const [selectKeys, setSelectKeys] = useState<string[]>([]);
   const [openKeys, setOpenKeys] = useState<string[]>([]);
@@ -39,7 +47,7 @@ function ListTree(props: ListTreeProps) {
           return node.children || [];
         }
         return list;
-      }, treeData)
+      }, treeData),
     );
     setParentNode(parentNode);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -49,7 +57,7 @@ function ListTree(props: ListTreeProps) {
     (selectKeys: string[]) => () => {
       setOpenKeys(selectKeys);
     },
-    []
+    [],
   );
 
   const handleChange = useCallback(
@@ -69,7 +77,7 @@ function ListTree(props: ListTreeProps) {
       console.log('selectKeys', selectKeys, node);
       onChange && node && onChange(node as any);
     },
-    [treeData, keyName, onChange]
+    [treeData, keyName, onChange],
   );
 
   const handleBack = useCallback(() => {
@@ -102,7 +110,10 @@ function ListTree(props: ListTreeProps) {
           <span className="tw-flex-1">{parentNode[labelName]}</span>
         </div>
       )}
-      <OverlayScrollbarsComponent className="list-tree-scrollbar" options={{ scrollbars: { autoHide: 'scroll' } }}>
+      <OverlayScrollbarsComponent
+        className="list-tree-scrollbar"
+        options={{ scrollbars: { autoHide: 'scroll' } }}
+      >
         {!!dirs.length && (
           <ul className="ae-tree">
             {dirs.map((item) => (

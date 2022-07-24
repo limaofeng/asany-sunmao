@@ -9,7 +9,10 @@ import { AsideTabPane, DEFAULT_GROUP_ID } from '../typings';
 
 export const DynaActionFormContext = React.createContext<any>({});
 
-export function createDynaActionForm(customizer: ICustomizer, namespace: string = 'cn.asany.ui.editor.properties') {
+export function createDynaActionForm(
+  customizer: ICustomizer,
+  namespace: string = 'cn.asany.ui.editor.properties',
+) {
   return ({ onChange: handleChange }: any) => {
     const container = useRef<HTMLDivElement>(null);
     const value = useContext(DynaActionFormContext);
@@ -17,7 +20,12 @@ export function createDynaActionForm(customizer: ICustomizer, namespace: string 
     return (
       <div ref={container} className="sketch-configuration-body scrollbars-visible">
         <OverlayScrollbarsComponent options={{ scrollbars: { autoHide: 'scroll' } }}>
-          <DynaActionForm library={namespace} value={value} onChange={handleChange} customizer={customizer!} />
+          <DynaActionForm
+            library={namespace}
+            value={value}
+            onChange={handleChange}
+            customizer={customizer!}
+          />
         </OverlayScrollbarsComponent>
       </div>
     );
@@ -33,7 +41,9 @@ const createTabPane = (item: any, namespace?: string): AsideTabPane => ({
 export function buildAside(customizer: ICustomizer, namespace?: string) {
   const tabs = [];
 
-  const fields = customizer.fields.map((item) => (item.group ? item : { ...item, group: DEFAULT_GROUP_ID }));
+  const fields = customizer.fields.map((item) =>
+    item.group ? item : { ...item, group: DEFAULT_GROUP_ID },
+  );
   const sourceGroups = [...(customizer.groups || [])];
 
   if (customizer.frame) {
@@ -69,7 +79,9 @@ export function buildAside(customizer: ICustomizer, namespace?: string) {
     });
   } else {
     for (const tab of customTabs) {
-      tab.groups = groups.filter(({ id }) => (tab.groups as string[]).some((g) => g === id || (g as any).id === id));
+      tab.groups = groups.filter(({ id }) =>
+        (tab.groups as string[]).some((g) => g === id || (g as any).id === id),
+      );
     }
   }
 
@@ -85,7 +97,7 @@ export function buildAside(customizer: ICustomizer, namespace?: string) {
           fields: fields.filter((field) => groupIds.includes(field.group! as string)),
         },
       };
-    })
+    }),
   );
 
   return tabs.map((tab) => createTabPane(tab, namespace));

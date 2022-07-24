@@ -40,7 +40,10 @@ function BlockLayers() {
   }, [blocks]);
 
   const handleSelect = useCallback((e: any) => {
-    dispatch({ type: SketchActionType.BLOCK_ACTIVE_KEY, payload: e.node.component + ':' + e.node.key });
+    dispatch({
+      type: SketchActionType.BLOCK_ACTIVE_KEY,
+      payload: e.node.component + ':' + e.node.key,
+    });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

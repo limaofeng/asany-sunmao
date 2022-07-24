@@ -1,4 +1,9 @@
-import { IComponentDefinition, ILibraryDefinition, LibraryMetadata, METADATA_KEY_COMPONENTS } from '../typings';
+import {
+  IComponentDefinition,
+  ILibraryDefinition,
+  LibraryMetadata,
+  METADATA_KEY_COMPONENTS,
+} from '../typings';
 import { getMetadata } from '../utils';
 
 export default function library(metadata: LibraryMetadata, loadComponentsMethod?: string) {

@@ -143,9 +143,9 @@ p {
         .header-right {
           display: flex;
           align-items: center;
+          height: 34px;
           margin-left: auto;
           transition: flex 0.2s ease-in-out 0s;
-          height: 34px;
 
           .header-icon {
             display: flex;
@@ -209,32 +209,33 @@ p {
 }
 
 .asany-ant-popover {
-  margin-left: 300px;
-  margin-top: 100px;
-  box-sizing: border-box;
-  //   margin: 0;
-  padding: 0;
-  color: rgba(0, 0, 0, 0.85);
-  font-size: 14px;
-  font-variant: tabular-nums;
-  line-height: 1.5715;
-  list-style: none;
-  font-feature-settings: 'tnum';
   position: absolute;
   top: 0;
   left: 0;
   z-index: 1030;
+  box-sizing: border-box;
+  margin-top: 100px;
+  margin-left: 300px;
+  //   margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.85);
   font-weight: normal;
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
   white-space: normal;
   text-align: left;
+  list-style: none;
   cursor: auto;
   user-select: text;
+  font-feature-settings: 'tnum';
 
   .ant-popover-inner {
     background-color: #fff;
     background-clip: padding-box;
     border-radius: 2px;
-    box-shadow: 0 3px 6px -4px rgb(0 0 0 / 12%), 0 6px 16px 0 rgb(0 0 0 / 8%), 0 9px 28px 8px rgb(0 0 0 / 5%);
+    box-shadow: 0 3px 6px -4px rgb(0 0 0 / 12%), 0 6px 16px 0 rgb(0 0 0 / 8%),
+      0 9px 28px 8px rgb(0 0 0 / 5%);
 
     .ant-popover-inner-content {
       padding: 0;

@@ -50,7 +50,7 @@ function FormProvider(props: FormProviderProps) {
       manager.current.dispatch(changedValues);
       onValuesChange && onValuesChange(changedValues, allValues);
     },
-    [onValuesChange]
+    [onValuesChange],
   );
 
   useEffect(() => {
@@ -79,7 +79,7 @@ export const useFormState = (): [FormInstance, typeof Form] => {
 
 export function useFormSelector<Selected>(
   selector: Selector<Selected>,
-  equalityFn: EqualityFn<Selected> = defaultEqualityFn
+  equalityFn: EqualityFn<Selected> = defaultEqualityFn,
 ) {
   const context = useContext(FormStateContext);
   const state = context.getState();

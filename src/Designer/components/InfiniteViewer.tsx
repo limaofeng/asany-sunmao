@@ -107,7 +107,7 @@ function InfiniteViewer(props: InfiniteViewerProps) {
       state.current.zoom = calculateScaling(state.current.zoom + zoom);
       onZoom ? onZoom(state.current.zoom / 100, original / 100) : forceRender();
     },
-    [onZoom]
+    [onZoom],
   );
 
   const handleScroll = useCallback(
@@ -116,7 +116,7 @@ function InfiniteViewer(props: InfiniteViewerProps) {
       state.current.scrollY -= y;
       onScroll ? onScroll(state.current.scrollX, state.current.scrollY) : forceRender();
     },
-    [onScroll]
+    [onScroll],
   );
 
   const handleGesture = useCallback(() => {
@@ -135,7 +135,10 @@ function InfiniteViewer(props: InfiniteViewerProps) {
     event.preventDefault();
     event.stopPropagation();
     const zoom = (event as any).wheelDeltaX + (event as any).wheelDeltaY;
-    const deltaZ = zoom !== 0 && (event as any).wheelDeltaX === 0 && Math.abs((event as any).wheelDeltaY) % 120 === 0;
+    const deltaZ =
+      zoom !== 0 &&
+      (event as any).wheelDeltaX === 0 &&
+      Math.abs((event as any).wheelDeltaY) % 120 === 0;
 
     store.current.xPoints.push(event.deltaX);
     store.current.yPoints.push(event.deltaY);

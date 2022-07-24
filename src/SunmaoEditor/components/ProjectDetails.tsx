@@ -12,7 +12,10 @@ function ProjectDetails() {
         <div className="header-left">项目详情</div>
         <div className="header-right"></div>
       </div>
-      <OverlayScrollbarsComponent options={{ scrollbars: { autoHide: 'scroll' } }} style={{ height: '100%' }}>
+      <OverlayScrollbarsComponent
+        options={{ scrollbars: { autoHide: 'scroll' } }}
+        style={{ height: '100%' }}
+      >
         <div style={{ padding: '8px 8px 0 16px' }}>{project.name}</div>
       </OverlayScrollbarsComponent>
     </div>

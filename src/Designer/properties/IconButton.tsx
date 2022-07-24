@@ -26,7 +26,13 @@ const IconButton = (props: IconButtonProps, externalRef: React.ForwardedRef<HTML
     ((externalRef as MutableRefObject<any>) || ref).current?.blur();
   };
   return (
-    <Tooltip transitionName="" mouseEnterDelay={0.6} mouseLeaveDelay={0.01} placement="bottom" title={tooltip}>
+    <Tooltip
+      transitionName=""
+      mouseEnterDelay={0.6}
+      mouseLeaveDelay={0.01}
+      placement="bottom"
+      title={tooltip}
+    >
       <span
         ref={externalRef || ref}
         tabIndex={0}

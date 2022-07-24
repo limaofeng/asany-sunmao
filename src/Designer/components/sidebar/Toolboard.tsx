@@ -76,7 +76,7 @@ function Toolboard(props: ToolboardProps, ref: React.ForwardedRef<IToolboard>) {
       forceRender();
       return;
     },
-    [editor.sidebar]
+    [editor.sidebar],
   );
 
   const { panels: all, activeKey } = state.current;
@@ -114,7 +114,9 @@ function Toolboard(props: ToolboardProps, ref: React.ForwardedRef<IToolboard>) {
     async (index: number, title: string, content: ComponentType, width: number, key?: string) => {
       const originalIndex = state.current.index;
       key = state.current.activeKey = key || state.current.activeKey!;
-      const panels = state.current.panels[key] ? state.current.panels[key] : (state.current.panels[key] = []);
+      const panels = state.current.panels[key]
+        ? state.current.panels[key]
+        : (state.current.panels[key] = []);
       const currentIndex = index === -1 ? originalIndex + 1 : Math.min(index, originalIndex + 1);
       if (originalIndex > currentIndex) {
         handleClose(currentIndex + 1);
@@ -151,7 +153,7 @@ function Toolboard(props: ToolboardProps, ref: React.ForwardedRef<IToolboard>) {
       }
       forceRender();
     },
-    [handleClose, setCollapsed]
+    [handleClose, setCollapsed],
   );
 
   const handleCloseNext = useCallback(async () => {
@@ -173,7 +175,7 @@ function Toolboard(props: ToolboardProps, ref: React.ForwardedRef<IToolboard>) {
       back: handleCloseNext,
       close: handleClose,
     }),
-    [handleClose, handleCloseNext, handleOpen, handleReopen]
+    [handleClose, handleCloseNext, handleOpen, handleReopen],
   );
 
   const getCollapseLocation = (panels: Panel[], index: number) => {
@@ -181,7 +183,9 @@ function Toolboard(props: ToolboardProps, ref: React.ForwardedRef<IToolboard>) {
       return 0;
     }
     const collapsedStartIndex = state.current.index + 1;
-    return -panels.slice(collapsedStartIndex, index).reduce((location, item) => location + item.width, 0);
+    return -panels
+      .slice(collapsedStartIndex, index)
+      .reduce((location, item) => location + item.width, 0);
   };
   const getLeft = (panels: Panel[], index: number): number => {
     if (index === 0) {
@@ -226,7 +230,7 @@ function Toolboard(props: ToolboardProps, ref: React.ForwardedRef<IToolboard>) {
       }
       return offsetLeft;
     },
-    [minWidth]
+    [minWidth],
   );
 
   const calculateWidth = useCallback(
@@ -234,7 +238,7 @@ function Toolboard(props: ToolboardProps, ref: React.ForwardedRef<IToolboard>) {
       return Math.max(minWidth, width + offsetLeft);
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [minWidth, minimizable]
+    [minWidth, minimizable],
   );
 
   const vw = calculateWidth(width, state.current.offset);
@@ -283,7 +287,7 @@ function Toolboard(props: ToolboardProps, ref: React.ForwardedRef<IToolboard>) {
           >
             <item.content visible={activeKey === key} />
           </ToolPanel>
-        ))
+        )),
       )}
     </Resizer>
   );

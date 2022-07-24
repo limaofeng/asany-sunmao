@@ -15,11 +15,7 @@ jobs:
           node-version: 16.x
 
       - name: Install deps and build (with cache)
-        # run: ls && pwd
         uses: bahmutov/npm-install@v1
-
-      - name: Lint
-        run: yarn lint
 
       - name: Test
         run: yarn test --ci --coverage --maxWorkers=2

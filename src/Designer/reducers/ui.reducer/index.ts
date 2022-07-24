@@ -19,5 +19,5 @@ export default combineReducers(
       return { ...state, tools: [] };
     }
     return state;
-  }
+  },
 );

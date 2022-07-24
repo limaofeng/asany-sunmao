@@ -9,7 +9,7 @@ const defaultState: IUIScenaToolbarState = {
 
 export default function reducer(
   state: IUIScenaToolbarState,
-  action: AsanyAction<UIScenaToolbarActionType | GlobalAsanyAction>
+  action: AsanyAction<UIScenaToolbarActionType | GlobalAsanyAction>,
 ): IUIScenaToolbarState {
   if (action.type === UIScenaToolbarActionType.ScenaToolbarSelect) {
     return { ...state, activeKeys: [...state.activeKeys, action.payload] };

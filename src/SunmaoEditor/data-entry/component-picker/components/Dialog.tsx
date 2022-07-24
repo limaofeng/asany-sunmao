@@ -24,7 +24,7 @@ function Dialog({ value, close, visible, onChange, options: treeData }: DialogPr
       onChange(name);
       close();
     },
-    [close, onChange]
+    [close, onChange],
   );
 
   return (
@@ -32,7 +32,12 @@ function Dialog({ value, close, visible, onChange, options: treeData }: DialogPr
       <div className="ae-popover-header tw-flex tw-items-center">
         <span className="ae-popover-header-title tw-flex-1">组件</span>
       </div>
-      <LibraryPanel visible={visible} value={value} treeData={treeData as any} onChange={handleChange} />
+      <LibraryPanel
+        visible={visible}
+        value={value}
+        treeData={treeData as any}
+        onChange={handleChange}
+      />
     </div>
   );
 }

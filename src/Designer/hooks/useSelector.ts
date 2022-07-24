@@ -20,7 +20,7 @@ const defaultEqualityFn = (a: any, b: any) => a === b;
  */
 export default function useSelector<Selected>(
   selector: Selector<Selected>,
-  equalityFn: EqualityFn<Selected> = defaultEqualityFn
+  equalityFn: EqualityFn<Selected> = defaultEqualityFn,
 ) {
   const store = useAsanyStore();
   // 强制让当前组件渲染的方法

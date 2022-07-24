@@ -118,7 +118,7 @@ export class Sketch {
   useSelector<Selected>(
     id: string,
     selector: Selector<Selected>,
-    equalityFn: EqualityFn<Selected> = defaultEqualityFn
+    equalityFn: EqualityFn<Selected> = defaultEqualityFn,
   ) {
     const zhis = this;
     return useInternalSelector(zhis, id, selector, equalityFn);

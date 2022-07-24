@@ -54,20 +54,32 @@ export interface IPropertiesPanel {
 
 function PropertiesPanel(props: PropertiesPanelProps, ref: React.ForwardedRef<IPropertiesPanel>) {
   const container = useRef<HTMLDivElement>(null);
-  const { onClose, title, children, extras = [], content, style, className, tabs = [], footer } = props;
+  const {
+    onClose,
+    title,
+    children,
+    extras = [],
+    content,
+    style,
+    className,
+    tabs = [],
+    footer,
+  } = props;
   const state = useRef<PropertiesPanelState>({
     next: false,
     nextIndex: -1,
     panels: extras,
   });
   const [, forceRender] = useReducer((s) => s + 1, 0);
-  const [activeKey, setActiveKey] = useState<string | undefined>(tabs.length ? tabs[0].id || tabs[0].title : undefined);
+  const [activeKey, setActiveKey] = useState<string | undefined>(
+    tabs.length ? tabs[0].id || tabs[0].title : undefined,
+  );
   const handleOpenNextPanel = useCallback(
     (index: number) => () => {
       state.current.nextIndex = index;
       forceRender();
     },
-    []
+    [],
   );
 
   useDeepCompareEffect(() => {
@@ -121,13 +133,17 @@ function PropertiesPanel(props: PropertiesPanelProps, ref: React.ForwardedRef<IP
         return container.current?.getBoundingClientRect().width || 0;
       },
     }),
-    []
+    [],
   );
 
   const { nextIndex, panels } = state.current;
   const hasNextPanel = nextIndex !== -1;
   return (
-    <div ref={container} className={classnames('properties-panel-container', className)} style={style}>
+    <div
+      ref={container}
+      className={classnames('properties-panel-container', className)}
+      style={style}
+    >
       <div id="entry-controls">
         <div
           className={classnames('settings-menu settings-menu-pane', {

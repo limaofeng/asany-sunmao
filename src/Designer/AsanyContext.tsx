@@ -3,7 +3,13 @@ import React, { useCallback, useEffect, useMemo, useReducer, useState } from 're
 import sketchReducer, { defaultValue } from './reducers';
 import { ActionType } from './reducers/actions';
 import { getReducers } from './utils/plugin';
-import type { AsanyAction, AsanyProject, AsanyProviderMode, EditorPlugin, IAsanyState } from './typings';
+import type {
+  AsanyAction,
+  AsanyProject,
+  AsanyProviderMode,
+  EditorPlugin,
+  IAsanyState,
+} from './typings';
 type UnsubscribeFunc = () => void;
 
 type SubscribeCallback = () => void;
@@ -67,7 +73,7 @@ export interface AsanyProviderProps {
 function useStore(mode: AsanyProviderMode, plugins: EditorPlugin[] = []): IAsanyStoreContext<any> {
   const [state, dispatch] = useReducer<React.ReducerWithoutAction<IAsanyState>>(
     sketchReducer as any,
-    defaultValue(mode, plugins)
+    defaultValue(mode, plugins),
   );
   const [listeners] = useState<SubscribeCallback[]>([]);
   const handleUnsubscribe = (callback: SubscribeCallback) => () => {
@@ -83,7 +89,7 @@ function useStore(mode: AsanyProviderMode, plugins: EditorPlugin[] = []): IAsany
       return handleUnsubscribe(callback);
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [listeners]
+    [listeners],
   );
   // TODO 后期需要优化，解决由于 hover 导致的频繁触发
   const handleDispatchSubscribe = useCallback(() => {
@@ -127,9 +133,13 @@ export const AsanyProvider = (props: AsanyProviderProps) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value]);
   return useMemo(
-    () => <AsanyContext.Provider value={store}>{store.getState().isReady && children}</AsanyContext.Provider>,
+    () => (
+      <AsanyContext.Provider value={store}>
+        {store.getState().isReady && children}
+      </AsanyContext.Provider>
+    ),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [version, store.getState().isReady]
+    [version, store.getState().isReady],
   );
 };
 

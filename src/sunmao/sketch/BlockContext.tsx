@@ -34,7 +34,7 @@ const BlockProvider = React.forwardRef(function BlockProvider(props: BlockProvid
       onBlockClick(e);
       onClick && onClick(e);
     },
-    [onBlockClick, onClick]
+    [onBlockClick, onClick],
   );
 
   const element = useMemo(() => {
@@ -67,7 +67,7 @@ const BlockProvider = React.forwardRef(function BlockProvider(props: BlockProvid
             ref,
             id: getId(),
           },
-          children
+          children,
         )}
       </BlockContext.Provider>
     );
@@ -78,7 +78,7 @@ const BlockProvider = React.forwardRef(function BlockProvider(props: BlockProvid
 // TODO 会导致不能刷新 / 或者频繁刷新
 export function buildBlockProvider(
   blockKey: string,
-  cache: React.RefObject<UseBlockCache<any, any>>
+  cache: React.RefObject<UseBlockCache<any, any>>,
 ): React.ComponentType<any> {
   return React.forwardRef((props: IBlockProviderProps<any> & DivProvider, ref) => {
     const handleGetId = useCallback(() => {
@@ -92,7 +92,15 @@ export function buildBlockProvider(
       onClick(e);
     }, []);
 
-    return <BlockProvider getId={handleGetId} {...props} blockKey={blockKey} onBlockClick={handleClick} ref={ref} />;
+    return (
+      <BlockProvider
+        getId={handleGetId}
+        {...props}
+        blockKey={blockKey}
+        onBlockClick={handleClick}
+        ref={ref}
+      />
+    );
   });
 }
 

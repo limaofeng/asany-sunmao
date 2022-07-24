@@ -1,4 +1,11 @@
-import type { AsanyTool, DeviceScreen, IAsanyEditor, IUIScenaState, ScenaHelper, Toolbar } from '../typings';
+import type {
+  AsanyTool,
+  DeviceScreen,
+  IAsanyEditor,
+  IUIScenaState,
+  ScenaHelper,
+  Toolbar,
+} from '../typings';
 import { sleep } from '../utils';
 import { getScena } from '../utils/plugin';
 import devices from '../assets/devices';

@@ -62,7 +62,7 @@ function WrapperPopover(props: WrapperPopoverProps<any>) {
     (value: any) => {
       onChange({ ...data, data: { ...value } });
     },
-    [data, onChange]
+    [data, onChange],
   );
 
   const handlePopoverContentShow = useCallback(() => {

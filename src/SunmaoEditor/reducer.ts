@@ -28,7 +28,7 @@ const defaultState: ISketchState = {
 
 export default function reducer(
   state: ISketchState,
-  action: AsanyAction<SketchActionType | IPluginActionType>
+  action: AsanyAction<SketchActionType | IPluginActionType>,
 ): ISketchState {
   if (action.type === IPluginActionType.PluginStateInit) {
     return defaultState;

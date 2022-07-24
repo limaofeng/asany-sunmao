@@ -53,7 +53,10 @@ export interface MultipleWrapperProps {
   isObject?: boolean;
   initializer?: (data: IMultipleWrapperData<any>) => any;
   onChange: (value: IMultipleWrapperData<any>[]) => void;
-  pipeline?: (value: IMultipleWrapperData<any>[], current: IMultipleWrapperData<any>) => IMultipleWrapperData<any>[];
+  pipeline?: (
+    value: IMultipleWrapperData<any>[],
+    current: IMultipleWrapperData<any>,
+  ) => IMultipleWrapperData<any>[];
 }
 
 type ItemRender = (props: any) => React.ReactElement;
@@ -68,7 +71,14 @@ type BuildItemRenderOptions = {
 };
 
 const buildItemRender = (XItemRender: ItemRender | undefined, options: BuildItemRenderOptions) => {
-  const { children, placeholder, className, isObject, buildChange, showPopoverImmediatelyAtCreated } = options;
+  const {
+    children,
+    placeholder,
+    className,
+    isObject,
+    buildChange,
+    showPopoverImmediatelyAtCreated,
+  } = options;
   const InnerItemRender = React.forwardRef((props: any, ref: any) => {
     if (!children && !XItemRender) {
       return (
@@ -81,11 +91,26 @@ const buildItemRender = (XItemRender: ItemRender | undefined, options: BuildItem
         />
       );
     }
-    return XItemRender ? <XItemRender {...props} ref={ref} /> : React.cloneElement(children, { ...props, ref });
+    return XItemRender ? (
+      <XItemRender {...props} ref={ref} />
+    ) : (
+      React.cloneElement(children, { ...props, ref })
+    );
   });
   return (
-    { data, drag, remove, update, dragging, indicator, animated, level, index, ...props }: SortableItemProps<any>,
-    ref: any
+    {
+      data,
+      drag,
+      remove,
+      update,
+      dragging,
+      indicator,
+      animated,
+      level,
+      index,
+      ...props
+    }: SortableItemProps<any>,
+    ref: any,
   ) => {
     const itemRenderProps = {
       level,
@@ -108,7 +133,7 @@ function getAddItem(
   type: string,
   defaultName: string = '',
   canSortItem: boolean,
-  isObject: boolean
+  isObject: boolean,
 ): IMultipleWrapperData<any> {
   return {
     id: generateUUID(),
@@ -156,7 +181,7 @@ export function MultipleWrapper<T>(props: MultipleWrapperProps) {
       sortable: canSortItem,
       type: sortableType.current,
       state: 'isOld',
-    }))
+    })),
   );
 
   const setValue = useCallback((value: IMultipleWrapperData<any>[]) => {
@@ -186,7 +211,9 @@ export function MultipleWrapper<T>(props: MultipleWrapperProps) {
   const handleItemChange = (data: any) => (newData: any) => {
     const { value } = temp.current;
     // console.log('Items Change', data, newData);
-    const newValue = value.map((item: any) => (item.id === data.id ? { ...data, ...newData } : item));
+    const newValue = value.map((item: any) =>
+      item.id === data.id ? { ...data, ...newData } : item,
+    );
     setValue(pipeline ? pipeline(newValue, newData) : newValue);
   };
 
@@ -196,14 +223,17 @@ export function MultipleWrapper<T>(props: MultipleWrapperProps) {
       return;
     }
     const item = getAddItem(sortableType.current, itemName, canSortItem, isObject);
-    setValue([...value, { ...item, data: initializer ? initializer(item) : item.data, state: 'isNew' }]);
+    setValue([
+      ...value,
+      { ...item, data: initializer ? initializer(item) : item.data, state: 'isNew' },
+    ]);
   };
 
   const handleSortChange = useCallback(
     (items: any[]) => {
       setValue(items);
     },
-    [setValue]
+    [setValue],
   );
 
   const itemRender = useMemo(
@@ -217,7 +247,7 @@ export function MultipleWrapper<T>(props: MultipleWrapperProps) {
         children,
       }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    []
+    [],
   );
 
   console.log('........', value);

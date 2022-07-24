@@ -17,7 +17,11 @@ function LoadingComponent(props: LoadingComponentProps) {
     node.addEventListener('transitionend', done, false);
   };
   return (
-    <CSSTransition in={loading} addEndListener={handleAddEndListener} classNames="asany-editor-loading">
+    <CSSTransition
+      in={loading}
+      addEndListener={handleAddEndListener}
+      classNames="asany-editor-loading"
+    >
       <div style={style} className={classnames('asany-editor-loading', className)}>
         <SpinKit name="Wave" />
       </div>

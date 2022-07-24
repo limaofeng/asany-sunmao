@@ -48,7 +48,7 @@ function Ruler(props: RulerProps) {
       guides.current[key] = e.guides;
       onGuides && onGuides(guides.current);
     },
-    [onGuides]
+    [onGuides],
   );
 
   const handleRulerReset = useCallback(
@@ -56,7 +56,7 @@ function Ruler(props: RulerProps) {
       e.stopPropagation();
       onResetScroll();
     },
-    [onResetScroll]
+    [onResetScroll],
   );
 
   useEffect(() => {

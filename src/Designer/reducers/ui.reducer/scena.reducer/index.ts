@@ -37,7 +37,7 @@ const defaultState: UIScenaGlobalState = {
 
 export function reducer(
   state: UIScenaGlobalState,
-  action: AsanyAction<UIScenaGlobalActionType | GlobalAsanyAction>
+  action: AsanyAction<UIScenaGlobalActionType | GlobalAsanyAction>,
 ): UIScenaGlobalState {
   if (action.type === UIScenaGlobalActionType.SetScena) {
     const { workspace, toolbar } = action.payload;
@@ -101,5 +101,5 @@ export default combineReducers(
     viewer: viewerReducer,
     toolbar: toolbarReducer,
   },
-  reducer
+  reducer,
 );

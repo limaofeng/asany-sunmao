@@ -2,7 +2,7 @@ import type { AsanyAction, IAsanyState, IReducer } from '../typings';
 
 export function combineReducers(
   reducers: { [key: string]: IReducer<any, any> },
-  defaultReducer?: IReducer<any, any> | any
+  defaultReducer?: IReducer<any, any> | any,
 ) {
   return function (state: IAsanyState | any, action: AsanyAction<any>) {
     for (const p in reducers) {

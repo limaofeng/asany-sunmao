@@ -20,7 +20,9 @@ function buildComponentDragObject(item: IComponentDragObject) {
     return {
       ...item,
       selector: (component: IComponentDefinition) => {
-        return !!component.tags && component.tags.some((tag) => tag.startsWith(item.selector as string));
+        return (
+          !!component.tags && component.tags.some((tag) => tag.startsWith(item.selector as string))
+        );
       },
     };
   }
@@ -38,7 +40,10 @@ const buildCreateDragObject =
     };
   };
 
-function defaultComponentSorter({ boost: a = 0 }: IComponentDefinition, { boost: b = 0 }: IComponentDefinition) {
+function defaultComponentSorter(
+  { boost: a = 0 }: IComponentDefinition,
+  { boost: b = 0 }: IComponentDefinition,
+) {
   return a - b;
 }
 
@@ -47,7 +52,9 @@ function buildComponentGroup(item: IComponentDragObject, sunmao: Sunmao): Compon
     title: item.title,
     type: item.type || COMPONENT,
     createDragObject: item.object || buildCreateDragObject(item.type || COMPONENT),
-    components: sunmao.getComponents(item.selector as ComponentSelector).sort(item.sorter || defaultComponentSorter),
+    components: sunmao
+      .getComponents(item.selector as ComponentSelector)
+      .sort(item.sorter || defaultComponentSorter),
   };
 }
 

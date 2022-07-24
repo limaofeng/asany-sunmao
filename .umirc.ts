@@ -32,6 +32,10 @@ export default defineConfig({
   mode: 'site',
   mfsu: {},
   webpack5: {},
+  extraPostCSSPlugins: [
+    require('tailwindcss')({ config: './tailwind.config.js' }),
+    require('autoprefixer'),
+  ],
   // more config: https://d.umijs.org/config
   chainWebpack(config, {}) {
     config.module

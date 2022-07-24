@@ -37,7 +37,9 @@ class BlockObserver<T> {
   }
 
   clear() {
-    this.eventEmitter.eventNames().forEach(this.eventEmitter.removeAllListeners.bind(this.eventEmitter));
+    this.eventEmitter
+      .eventNames()
+      .forEach(this.eventEmitter.removeAllListeners.bind(this.eventEmitter));
   }
 }
 

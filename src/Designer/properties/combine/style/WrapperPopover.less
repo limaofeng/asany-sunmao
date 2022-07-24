@@ -13,12 +13,12 @@
 
     a {
       position: absolute;
+      right: 4px;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       width: 32px;
       height: 32px;
-      right: 4px;
 
       span {
         line-height: 0;
@@ -31,8 +31,8 @@
   }
 
   .multiple-wrapper {
-    padding-right: 40px;
     position: relative;
+    padding-right: 40px;
 
     .multiple-wrapper-header {
       position: absolute;
@@ -41,8 +41,8 @@
 
       a {
         display: inline-flex;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
         width: 32px;
         height: 32px;
 
@@ -56,33 +56,33 @@
       margin-bottom: 0;
 
       li {
-        background-color: #fff;
         display: flex;
+        background-color: #fff;
 
         .sortable-handler {
           display: flex;
           align-items: center;
           justify-content: center;
+          width: 16px;
+          height: 32px;
           color: rgba(0, 0, 0, 0.3);
           cursor: move;
           opacity: 0.6;
-          width: 16px;
-          height: 32px;
         }
 
         .multiple-wrapper-list-item-body {
-          align-items: center;
           display: flex;
           flex: 1;
+          align-items: center;
 
           .delete {
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             width: 28px;
             height: 28px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             line-height: 0;
+            text-align: center;
 
             span {
               line-height: 0;
@@ -90,7 +90,6 @@
           }
         }
       }
-
     }
   }
 }

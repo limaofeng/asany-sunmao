@@ -6,7 +6,7 @@ const defaultState: IPluginState = {};
 
 export default function reducer(
   state: IPluginState,
-  action: AsanyAction<IPluginActionType | GlobalAsanyAction>
+  action: AsanyAction<IPluginActionType | GlobalAsanyAction>,
 ): IPluginState {
   if (GlobalAsanyAction.Init === action.type) {
     return { ...state, ...defaultState };

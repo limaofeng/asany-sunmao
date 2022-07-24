@@ -49,7 +49,7 @@ const RadiusAllSetting = (props: RadiusAllSettingProps) => {
       newValue[index] = onlyNumber(event.target.value);
       setValue(newValue);
     },
-    [value]
+    [value],
   );
 
   // 设置图标及文本选中
@@ -68,7 +68,13 @@ const RadiusAllSetting = (props: RadiusAllSettingProps) => {
         {icons.map((_, i) => {
           return (
             <div className="input-box" key={i}>
-              <Input data-id={i} onFocus={handleFocus} value={value[i]} onBlur={handleBlur} onChange={handleChange} />
+              <Input
+                data-id={i}
+                onFocus={handleFocus}
+                value={value[i]}
+                onBlur={handleBlur}
+                onChange={handleChange}
+              />
             </div>
           );
         })}

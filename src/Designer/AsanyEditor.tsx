@@ -13,7 +13,9 @@ import { ActionType } from './reducers/actions';
 import RuntimeContainer from './RuntimeContainer';
 import Toolbar from './components/toolbar/Toolbar';
 import { useEditorDispatch, useEditor, useEditorSelector } from './hooks';
-import DefaultLoadingComponent, { LoadingComponentProps } from './components/scena/LoadingComponent';
+import DefaultLoadingComponent, {
+  LoadingComponentProps,
+} from './components/scena/LoadingComponent';
 import { AsanyProject, EditorPlugin, IAsanyEditor, WorkspaceProps } from './typings';
 import './icons';
 
@@ -30,8 +32,15 @@ interface AsanyProps {
 }
 
 const Editor = React.forwardRef(function Editor(
-  { className, onSave, container, loading: LoadingComponent = DefaultLoadingComponent, children, ...props }: AsanyProps,
-  ref?: React.ForwardedRef<IAsanyEditor>
+  {
+    className,
+    onSave,
+    container,
+    loading: LoadingComponent = DefaultLoadingComponent,
+    children,
+    ...props
+  }: AsanyProps,
+  ref?: React.ForwardedRef<IAsanyEditor>,
 ) {
   const dispatch = useEditorDispatch();
 
@@ -49,7 +58,7 @@ const Editor = React.forwardRef(function Editor(
       }
       return <div>插件未配置 Workspace 组件</div>;
     },
-    [workspace]
+    [workspace],
   );
 
   const visible = useEditorSelector((state) => state.ui.aside.visible);
@@ -115,7 +124,16 @@ interface AsanyWarpperProps {
 }
 
 function AsanyEditor(props: AsanyWarpperProps, ref?: React.ForwardedRef<IAsanyEditor>) {
-  const { children, project, onSave, onBack, container = RuntimeContainer, plugins = [], loading, className } = props;
+  const {
+    children,
+    project,
+    onSave,
+    onBack,
+    container = RuntimeContainer,
+    plugins = [],
+    loading,
+    className,
+  } = props;
   const [version, forceRender] = useReducer((s) => s + 1, 0);
   useEffect(() => {
     if (!project) {
@@ -126,7 +144,14 @@ function AsanyEditor(props: AsanyWarpperProps, ref?: React.ForwardedRef<IAsanyEd
 
   return (
     <AsanyProvider version={version} plugins={[...plugins]} value={project}>
-      <Editor ref={ref} className={className} onSave={onSave} loading={loading} container={container} onBack={onBack}>
+      <Editor
+        ref={ref}
+        className={className}
+        onSave={onSave}
+        loading={loading}
+        container={container}
+        onBack={onBack}
+      >
         {children}
       </Editor>
     </AsanyProvider>

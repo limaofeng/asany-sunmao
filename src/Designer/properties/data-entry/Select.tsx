@@ -23,7 +23,8 @@ function defaultCompare(value: string, option: SelectOption) {
 }
 
 const renderSelectOption =
-  (compare: OptionCompare, onChange: (option: SelectOption) => void) => (option: SelectOption | SelectOptionGroup) => {
+  (compare: OptionCompare, onChange: (option: SelectOption) => void) =>
+  (option: SelectOption | SelectOptionGroup) => {
     const { label } = option;
     if (option.hasOwnProperty('value')) {
       const item = option as SelectOption;
@@ -32,7 +33,9 @@ const renderSelectOption =
       };
       return (
         <li className="asayneditor-select-option" key={item.value} onClick={handleClick}>
-          <span className="left-icon">{compare(item) && <Icon name="AsanyEditor/VectorCorrect" />}</span>
+          <span className="left-icon">
+            {compare(item) && <Icon name="AsanyEditor/VectorCorrect" />}
+          </span>
           <span className="center-text">{item.label}</span>
         </li>
       );
@@ -75,7 +78,7 @@ const renderIcon = (icon: ElementType) => {
 
 const defaultGetOption = (
   options: (SelectOption | SelectOptionGroup)[],
-  value: string | undefined
+  value: string | undefined,
 ): SelectOption | undefined => {
   if (!value) {
     return;
@@ -144,7 +147,7 @@ const Select = (props: SelectProps) => {
       }
       return compare(value, option);
     },
-    [value, compare]
+    [value, compare],
   );
 
   const handleClose = useCallback(() => {

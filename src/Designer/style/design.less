@@ -38,15 +38,15 @@
 
   .dsign-popover-select {
     height: 28px;
-    line-height: 28px;
     min-height: 28px;
+    line-height: 28px;
   }
 
   .design-rows {
     .design-rows-items {
       height: 28px;
-      line-height: 28px;
       min-height: 28px;
+      line-height: 28px;
     }
 
     .scrubbable-control {
@@ -244,7 +244,7 @@
   }
 
   &:not(:disabled):focus-within {
-    border: 1px solid @InputFocusColor  !important;
+    border: 1px solid @InputFocusColor !important;
     outline: 1px solid @InputFocusColor;
     outline-offset: -2px;
   }
@@ -306,7 +306,7 @@
 
     &:not(:disabled):focus-within {
       .hover();
-      border: 1px solid @InputFocusColor  !important;
+      border: 1px solid @InputFocusColor !important;
       outline: 1px solid @InputFocusColor;
       outline-offset: -2px;
     }
@@ -358,8 +358,8 @@
 
     .color-percentage {
       position: relative;
-      padding-left: 8px;
       flex: 0 0 48px;
+      padding-left: 8px;
     }
   }
 }
@@ -377,11 +377,10 @@
 
 .design-rows-items {
   box-sizing: border-box;
-  min-height: 30px;
   height: 32px;
+  min-height: 30px;
 
   .ant-input {
-
     &:hover,
     &:focus {
       border-color: transparent;
@@ -535,10 +534,10 @@
   display: flex;
   flex: 1;
   align-items: center;
-  padding: 0 4px 0 7px;
-  border: 1px solid transparent;
   height: 32px;
+  padding: 0 4px 0 7px;
   line-height: 32px;
+  border: 1px solid transparent;
 
   &.exist-icon {
     padding: 0 7px 0 0;
@@ -603,7 +602,7 @@
     .ant-popover-inner-content {
       padding: 0;
 
-      >div {
+      > div {
         width: 100%;
 
         .dsign-list {
@@ -633,10 +632,10 @@
       flex-direction: column;
       margin: 8px 0;
 
-      >div {
+      > div {
         width: 100%;
 
-        >ul {
+        > ul {
           width: 100%;
         }
       }
@@ -652,11 +651,11 @@
         }
 
         .group-name {
-          font-size: 12px;
           height: 24px;
-          line-height: 24px;
           padding-left: 8px;
           color: var(--primary-third-color);
+          font-size: 12px;
+          line-height: 24px;
         }
       }
 
@@ -679,9 +678,9 @@
           display: flex;
           align-items: center;
           width: 18px;
-          font-size: 14px;
           margin-right: 6px;
           margin-left: 8px;
+          font-size: 14px;
 
           .svg-icon {
             display: flex;
@@ -702,8 +701,8 @@
         }
 
         &:hover {
-          background: @InputFocusColor;
           color: #fff;
+          background: @InputFocusColor;
         }
       }
     }
@@ -731,14 +730,13 @@
     }
 
     .more-arrow {
-      font-size: 8px;
       position: absolute;
       top: 50%;
       right: 4px;
+      font-size: 8px;
       transform: translateY(-50%) !important;
       pointer-events: none;
     }
-
   }
 }
 
@@ -857,7 +855,9 @@
   }
 }
 
-.asanyeditor-config-component-popover.asanyeditor-dsign-light-popover.asanyeditor-dsign-popover .ant-popover-content .ant-popover-inner-content {
+.asanyeditor-config-component-popover.asanyeditor-dsign-light-popover.asanyeditor-dsign-popover
+  .ant-popover-content
+  .ant-popover-inner-content {
   width: 264px;
 
   .list-tree-container .list-tree-scrollbar {

@@ -52,11 +52,15 @@ export type ComponentSelector = (component: IComponentDefinition) => boolean;
 export type ComponentSorter = (a: IComponentDefinition, b: IComponentDefinition) => number;
 
 export type ComponentPropertyRendererSetting = {
-  component: ComponentPropertyRenderer | ComponentType<any>  | string;
+  component: ComponentPropertyRenderer | ComponentType<any> | string;
   props: { [key: string]: any };
 };
 
-export type ComponentPropertyRenderer = string | ComponentType<any> | ComponentPropertyRendererSetting | any;
+export type ComponentPropertyRenderer =
+  | string
+  | ComponentType<any>
+  | ComponentPropertyRendererSetting
+  | any;
 
 export type VisibleFunc = (props: any) => boolean;
 

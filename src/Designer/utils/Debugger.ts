@@ -6,6 +6,10 @@ export default class Debugger {
     if (!this.isDebug) {
       return;
     }
-    console.log('%c AsanyEditor Debugger:', 'padding: 1px; background: #4af; color: #fff;', ...args);
+    console.log(
+      '%c AsanyEditor Debugger:',
+      'padding: 1px; background: #4af; color: #fff;',
+      ...args,
+    );
   }
 }

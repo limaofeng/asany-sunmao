@@ -28,7 +28,11 @@ function crbc(component: ComponentType<any>, props: any = {}, name?: string) {
   return { name, component: component || EmptyRenderer, props };
 }
 
-export function getDefaultRenderer(sunmao: Sunmao, library: string, item: IField): ComponentPropertyRendererSetting {
+export function getDefaultRenderer(
+  sunmao: Sunmao,
+  library: string,
+  item: IField,
+): ComponentPropertyRendererSetting {
   switch (item.type) {
     case 'Integer':
       return cr(sunmao, `${library}.InputNumber`);
@@ -52,7 +56,11 @@ export function getDefaultRenderer(sunmao: Sunmao, library: string, item: IField
   }
 }
 
-function getBasisRenderer(sunmao: Sunmao, library: string, item: IField): ComponentPropertyRenderer {
+function getBasisRenderer(
+  sunmao: Sunmao,
+  library: string,
+  item: IField,
+): ComponentPropertyRenderer {
   if (!item.renderer) {
     return getDefaultRenderer(sunmao, library, item);
   }
@@ -86,7 +94,11 @@ function getBasisRenderer(sunmao: Sunmao, library: string, item: IField): Compon
   return crbc(item.renderer['component'] as any, item.renderer['props']);
 }
 
-export function getRenderer(sunmao: Sunmao, library: string, item: IField): ComponentPropertyRenderer {
+export function getRenderer(
+  sunmao: Sunmao,
+  library: string,
+  item: IField,
+): ComponentPropertyRenderer {
   const render = getBasisRenderer(sunmao, library, item);
   if (item.wrappers) {
     if ((item as any).wrapperRender) {

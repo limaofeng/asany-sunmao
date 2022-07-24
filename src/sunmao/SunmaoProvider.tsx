@@ -18,7 +18,9 @@ interface SunmaoProviderProps {
 function SunmaoProvider({ sunmao, debug = true, children }: SunmaoProviderProps) {
   return useMemo(() => {
     return (
-      <SunmaoContext.Provider value={{ sunmao: sunmao || defaultSunmao, debug }}>{children}</SunmaoContext.Provider>
+      <SunmaoContext.Provider value={{ sunmao: sunmao || defaultSunmao, debug }}>
+        {children}
+      </SunmaoContext.Provider>
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

@@ -1,6 +1,13 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 
-import { ComponentPropertyRendererSetting, ICustomizer, IField, IGroup, useDebugger, useSunmao } from '../../sunmao';
+import {
+  ComponentPropertyRendererSetting,
+  ICustomizer,
+  IField,
+  IGroup,
+  useDebugger,
+  useSunmao,
+} from '../../sunmao';
 import isEqual from 'lodash/isEqual';
 import classnames from 'classnames';
 
@@ -26,7 +33,12 @@ interface FormItemWrapperProps {
   size?: string;
 }
 
-export function FormItemWrapper({ component: Item, field, defaultValue, ...props }: FormItemWrapperProps) {
+export function FormItemWrapper({
+  component: Item,
+  field,
+  defaultValue,
+  ...props
+}: FormItemWrapperProps) {
   // console.log('FormItemWrapper', field, Item, defaultValue, props);
   const extProps = useFormSelector((state) => {
     if (Array.isArray(field.deps)) {
@@ -110,7 +122,10 @@ PanelBody.defaultProps = {
   layout: 'Stacked',
 };
 
-const DynaActionForm = ({ library = 'cn.asany.ui.editor.properties', ...props }: DynaActionFormProps): JSX.Element => {
+const DynaActionForm = ({
+  library = 'cn.asany.ui.editor.properties',
+  ...props
+}: DynaActionFormProps): JSX.Element => {
   const { value = {}, onChange, customizer } = props;
 
   const console = useDebugger();
@@ -129,7 +144,9 @@ const DynaActionForm = ({ library = 'cn.asany.ui.editor.properties', ...props }:
     setGroups(
       customizer.fields
         .reduce((groups: IGroup[], definition) => {
-          const id = (typeof definition.group === 'boolean' ? definition.name : definition.group) || 'DEFAULT';
+          const id =
+            (typeof definition.group === 'boolean' ? definition.name : definition.group) ||
+            'DEFAULT';
           let group: IGroup = groups.find((g: any) => g.id === id)!;
           if (group) {
             group.fields.push({
@@ -156,12 +173,18 @@ const DynaActionForm = ({ library = 'cn.asany.ui.editor.properties', ...props }:
             (group as any).visible = group.fields[0].visible;
           }
           return group;
-        })
+        }),
     );
     const fieldsValue = { ...defaultValue.current, ...value };
     form.setFieldsValue(fieldsValue);
     console.log('表单配置:', customizer);
-    console.log('表单初始数据:', 'DefaultValue = ', defaultValue.current, 'FieldsValue = ', fieldsValue);
+    console.log(
+      '表单初始数据:',
+      'DefaultValue = ',
+      defaultValue.current,
+      'FieldsValue = ',
+      fieldsValue,
+    );
     return () => {
       form.resetFields();
     };

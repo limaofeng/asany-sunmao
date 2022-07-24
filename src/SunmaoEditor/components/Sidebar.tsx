@@ -57,7 +57,10 @@ function Sidebar(props: SidebarProps) {
   const { outlinePaneExpanded, outlinePaneHeight } = state.current;
   // 折叠面板最大高度为: 侧边栏 - 侧边栏标题栏高度
   const SUBPANEL_MAX_HEIGHT = window.innerHeight - 50 - 40;
-  let outlinepaneheight = Math.min(SUBPANEL_MAX_HEIGHT, Math.max(outlinePaneHeight, SUBPANEL_MIN_HEIGHT));
+  let outlinepaneheight = Math.min(
+    SUBPANEL_MAX_HEIGHT,
+    Math.max(outlinePaneHeight, SUBPANEL_MIN_HEIGHT),
+  );
   outlinepaneheight = outlinePaneExpanded ? outlinepaneheight : SUBPANEL_MIN_HEIGHT;
 
   return (

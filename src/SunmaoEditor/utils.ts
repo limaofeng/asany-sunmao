@@ -4,7 +4,11 @@ import isEqual from 'lodash/isEqual';
 import debounce from 'lodash/debounce';
 import lodashThrottle from 'lodash/throttle';
 
-export function useDebounce<T extends (...args: any) => any>(fn: T, delay: number, deps?: DependencyList) {
+export function useDebounce<T extends (...args: any) => any>(
+  fn: T,
+  delay: number,
+  deps?: DependencyList,
+) {
   return useCallback(debounce(fn, delay), deps || []);
 }
 
@@ -26,13 +30,15 @@ export function tree<T>(
     getParentKey = (data: any) => getFieldValue(data, pidKey),
     converter = undefined,
     sort = undefined,
-  }: TreeOptions<T>
+  }: TreeOptions<T>,
 ) {
   const start = new Date().getTime();
   try {
     let roots = list.filter((item: any) => {
       if (getParentKey(item)) {
-        const parent = list.find((parent) => (parent as any)[idKey].toString() === getParentKey(item).toString());
+        const parent = list.find(
+          (parent) => (parent as any)[idKey].toString() === getParentKey(item).toString(),
+        );
         if (!parent) {
           return true;
         }
@@ -109,7 +115,7 @@ export const sleep = (time: number) =>
 
 export function generateUUID() {
   return '10000000-1000-4000-8000-100000000000'.replace(/[018]/g, (c: any) =>
-    (c ^ (crypto.getRandomValues(new Uint32Array(1))[0] & (15 >> (c / 4)))).toString(16)
+    (c ^ (crypto.getRandomValues(new Uint32Array(1))[0] & (15 >> (c / 4)))).toString(16),
   );
 }
 

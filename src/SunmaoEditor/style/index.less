@@ -18,11 +18,12 @@
 
     .title {
       padding-left: 16px;
-      font-size: 14px;
-      font-weight: bold;
       color: var(--primary-color);
-      font-family: Avenir, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-        sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', sans-serif;
+      font-weight: bold;
+      font-size: 14px;
+      font-family: Avenir, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+        Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+        'Noto Color Emoji', sans-serif;
       letter-spacing: 12px;
     }
   }
@@ -30,72 +31,72 @@
   .sunmao-navigation-container {
     display: flex;
     flex: 1;
-    padding: 0 24px 0 24px;
     height: 100%;
+    padding: 0 24px 0 24px;
 
     .sunmao-search {
+      display: flex;
+      box-sizing: padding-box;
+      margin: 0;
+      color: #4b4b4b;
       border: 1px solid #e1e1e1;
       border-radius: 4px;
-      box-sizing: padding-box;
-      color: #4b4b4b;
-      margin: 0;
       outline: 0;
       transition: color 0.3s, border 0.3s;
-      display: flex;
 
       .sunmao-icon-typs {
-        border-radius: 4px 0 0 4px;
+        color: #4b4b4b;
         background-color: #fafafa;
         border-right: 1px solid #e1e1e1;
-        color: #4b4b4b;
+        border-radius: 4px 0 0 4px;
 
         select {
-          appearance: none;
-          background-color: transparent;
-          border: 0;
-          box-sizing: padding-box;
-          cursor: pointer;
+          position: relative;
           display: inline-block;
-          font-size: 0.875rem;
+          box-sizing: padding-box;
           height: 38px;
           min-height: 30px;
-          outline: 0;
           padding: 0 32px 0 11px;
-          position: relative;
-          transition: background-color 0.3s, color 0.3s, border 0.3s;
+          font-size: 0.875rem;
           vertical-align: middle;
+          background-color: transparent;
+          border: 0;
+          outline: 0;
+          cursor: pointer;
+          transition: background-color 0.3s, color 0.3s, border 0.3s;
+          appearance: none;
         }
       }
 
       .sunmao-icon-input {
-        flex: 1;
         display: flex;
+        flex: 1;
         align-items: center;
 
         input {
-          color: #4b4b4b;
-          padding-left: 40px;
-          border-radius: 0;
           height: 32px;
           margin: 0;
-          outline: 0;
-          border: 0;
-          transition: color 0.3s, border 0.3s;
+          padding-left: 40px;
+          color: #4b4b4b;
           background-color: transparent;
+          border: 0;
+          border-radius: 0;
+          outline: 0;
+          transition: color 0.3s, border 0.3s;
         }
       }
     }
   }
 
   .sunmao-my-libraries {
-    width: 128px;
-    padding-right: 24;
     display: flex;
     align-items: center;
+    width: 128px;
+    padding-right: 24;
 
     .button-text {
-      font-size: 14px;
       color: var(--primary-color);
+      font-size: 14px;
     }
   }
 }
@@ -104,7 +105,7 @@
   .sidebar-block-layers {
     .asany-treeview {
       .monaco-icon-label {
-        &>.svg-icon {
+        & > .svg-icon {
           svg {
             width: 21px;
             height: 21px;
@@ -153,8 +154,8 @@
 }
 
 .sunmao-libraries {
-  color: var(--primary-second-color);
   width: 100%;
+  color: var(--primary-second-color);
   background-color: var(--gray-color-background);
 
   a {
@@ -163,11 +164,11 @@
 
   a.name-editing-cancel,
   a.name-editing-ok {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: 28px;
     height: 28px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
 
     &:hover {
       color: var(--primary-color);
@@ -190,12 +191,12 @@
   .libraries-header-section {
     .libraries-header {
       display: flex;
-      color: var(--primary-third-color);
+      align-items: center;
       margin-top: 14px;
+      margin-bottom: 24px;
+      color: var(--primary-third-color);
       font-size: 21px;
       line-height: 32px;
-      margin-bottom: 24px;
-      align-items: center;
 
       .icon-arrow {
         margin: 0 6px;
@@ -211,13 +212,13 @@
         height: 32px;
 
         .ant-input-rimless {
-          padding-left: 0;
           margin-top: 1px;
+          padding-left: 0;
           color: var(--primary-second-color);
-          font-size: 21px;
           font-weight: 500;
-          border-bottom-left-radius: 0;
+          font-size: 21px;
           border-bottom-right-radius: 0;
+          border-bottom-left-radius: 0;
         }
 
         .ant-spin-nested-loading .ant-spin-container {
@@ -244,14 +245,14 @@
     flex-wrap: wrap;
 
     .library-container {
+      position: relative;
+      display: inline-block;
       width: 280px;
       height: 420px;
       margin: 0 20px 20px 0;
-      border-radius: 2px;
-      display: inline-block;
       vertical-align: top;
-      position: relative;
       background: #e0dfdf;
+      border-radius: 2px;
 
       &.ant-card-hoverable {
         cursor: default;
@@ -265,12 +266,12 @@
         }
 
         .library-create-form {
-          flex: 1;
           display: block;
           display: flex;
-          justify-content: center;
-          align-items: center;
+          flex: 1;
           flex-direction: column;
+          align-items: center;
+          justify-content: center;
 
           &.active {
             .library-action-buttons .svg-icon {
@@ -287,11 +288,11 @@
           }
 
           .library-action-buttons {
-            height: 40px;
-            width: 80px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+            width: 80px;
+            height: 40px;
 
             .name-editing-cancel {
               font-size: 16px;
@@ -302,27 +303,27 @@
             }
 
             .svg-icon {
-              height: 32px;
-              width: 32px;
               display: flex;
-              opacity: 0;
-              justify-content: center;
               align-items: center;
+              justify-content: center;
+              width: 32px;
+              height: 32px;
+              opacity: 0;
               transition: opacity 0.5s;
             }
           }
         }
 
         .library-name-input {
-          height: 32px;
           width: 220px;
+          height: 32px;
           padding: 0 10px 0 10px;
-          background-color: transparent;
-          font-style: italic;
-          border: 0;
-          border-radius: 0;
-          border-bottom: 1px solid #aaa;
           color: var(--primary-second-color);
+          font-style: italic;
+          background-color: transparent;
+          border: 0;
+          border-bottom: 1px solid #aaa;
+          border-radius: 0;
 
           &:hover {
             &::placeholder {
@@ -344,13 +345,13 @@
       }
 
       .library-image-wrapper {
-        border-top-left-radius: 2px;
-        border-top-right-radius: 2px;
+        position: relative;
         width: 100%;
         height: 350px;
-        position: relative;
-        cursor: pointer;
         background-color: #ccc;
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
+        cursor: pointer;
       }
 
       &.ant-card-bordered {
@@ -358,35 +359,35 @@
       }
 
       .ant-card-body {
-        padding: 0;
-        height: 70px;
         display: flex;
         flex-direction: row;
+        height: 70px;
+        padding: 0;
       }
 
       .lib-description {
-        padding: 6px 0 12px 16px;
         flex: 1;
+        padding: 6px 0 12px 16px;
 
         .library-name-header {
-          padding-right: 32px;
+          display: flex;
+          align-items: center;
           height: 28px;
+          margin: 0;
+          padding-right: 32px;
           font-weight: 300;
           font-size: 18px;
           line-height: 28px;
-          margin: 0;
-          display: flex;
-          align-items: center;
 
           .ant-input-rimless {
-            padding: 0;
             height: 28px;
-            font-weight: 300;
+            padding: 0;
             color: var(--primary-second-color);
+            font-weight: 300;
             font-size: inherit;
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
             border-bottom-color: var(--text-color-subtle-contrast);
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
           }
 
           .ant-spin-blur {
@@ -404,11 +405,11 @@
         }
 
         .library-item-count-label {
-          height: 24px;
           top: 50%;
-          font-size: 15px;
-          color: #787878;
+          height: 24px;
           margin-bottom: 0;
+          color: #787878;
+          font-size: 15px;
         }
       }
 
@@ -418,12 +419,12 @@
         padding-right: 8px;
 
         .ant-dropdown-link {
-          height: 32px;
-          width: 32px;
-          font-size: 24px;
           display: flex;
-          justify-content: center;
           align-items: center;
+          justify-content: center;
+          width: 32px;
+          height: 32px;
+          font-size: 24px;
         }
       }
     }
@@ -435,8 +436,8 @@
     display: flex;
 
     .library-left {
-      flex: 1;
       display: flex;
+      flex: 1;
       flex-direction: column;
     }
 
@@ -470,8 +471,8 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        font-size: 24px;
         margin-bottom: 16px;
+        font-size: 24px;
         box-shadow: 0 2px #f1f1f1, 0 3px #d4d4d4;
 
         .ims-hs-title {
@@ -494,8 +495,8 @@
       .icon-mosaic {
         &.sortable-item-dragging {
           .icon-thumb {
-            box-shadow: inset 0 0 0 3px var(--icon-sortable-chosen-color);
             background: var(--general-background);
+            box-shadow: inset 0 0 0 3px var(--icon-sortable-chosen-color);
           }
         }
       }
@@ -503,29 +504,28 @@
 
     .icon-mosaic {
       display: inline-flex;
-      margin-left: 12px;
       margin-top: 12px;
+      margin-left: 12px;
       cursor: pointer;
 
       &.mode-list {
         width: 280px;
-        margin-right: 48px;
         margin-top: 24px;
+        margin-right: 48px;
         margin-bottom: 12px;
 
+        box-shadow: 0 2px #f1f1f1, 0 3px #d4d4d4;
+
         .icon-thumb {
-          background: transparent;
-          height: 48px;
-          width: 48px;
           justify-content: start;
+          width: 48px;
+          height: 48px;
+          background: transparent;
         }
 
         &:hover .icon-thumb {
           box-shadow: none;
         }
-
-        box-shadow: 0 2px #f1f1f1,
-        0 3px #d4d4d4;
       }
 
       &:hover {
@@ -536,8 +536,8 @@
 
       &.selected {
         .icon-thumb {
-          box-shadow: inset 0 0 0 3px var(--primary-focus-color);
           background: var(--general-background);
+          box-shadow: inset 0 0 0 3px var(--primary-focus-color);
         }
       }
     }
@@ -546,9 +546,9 @@
       width: 72px;
       height: 72px;
       font-size: 32px;
-      transition: background 0.1s;
-      border-radius: 5px;
       background-color: #ddd;
+      border-radius: 5px;
+      transition: background 0.1s;
     }
   }
 
@@ -569,10 +569,10 @@
     }
 
     .global-panel {
-      height: 100%;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
+      height: 100%;
 
       .import-icons {
         display: flex;
@@ -586,14 +586,14 @@
         }
 
         p {
-          font-size: 14px;
           margin-bottom: 0;
+          font-size: 14px;
         }
 
         button {
           width: auto;
-          padding-left: 20px;
           padding-right: 20px;
+          padding-left: 20px;
         }
       }
     }
@@ -607,18 +607,18 @@
     display: flex;
     flex-wrap: wrap;
 
-    &.show-list>li {
+    &.show-list > li {
       width: 100%;
       height: auto;
 
       .component-icon {
         display: flex;
         flex-wrap: wrap;
+        align-items: center;
         justify-content: center;
         min-height: 40px;
-        align-items: center;
         border: 1px solid #f0f0f0;
-        transition: box-shadow .3s, border-color .3s;
+        transition: box-shadow 0.3s, border-color 0.3s;
 
         &:hover {
           border-color: transparent;
@@ -674,14 +674,13 @@
         top: 50%;
         right: 14px;
         left: auto;
-        padding: 0;
         margin-right: 0;
+        padding: 0;
         transform: translateY(-50%);
       }
     }
   }
 }
-
 
 .asanyeditor-config-component-popover.asanyeditor-dsign-light-popover.asanyeditor-dsign-popover {
   .ant-popover-content .ant-popover-inner-content {
@@ -689,7 +688,6 @@
   }
 
   .ae-popover.component-picker .ae-popover-content {
-
     .tree-node-content {
       padding: 8px 16px 8px 16px;
 
@@ -718,17 +716,17 @@
 
           .component-item-container {
             position: relative;
-            border-radius: 12px;
             width: 100%;
             height: 100%;
             overflow: hidden;
+            border-radius: 12px;
 
             .component-preview {
               height: 100%;
 
               img {
-                height: 100%;
                 width: 100%;
+                height: 100%;
                 object-fit: cover;
                 transition: transform 0.3s ease-in-out;
               }
@@ -741,47 +739,45 @@
 
             .tree-node-item-title {
               position: absolute;
+              bottom: 0;
               width: 100%;
               height: 24px;
-              bottom: 0;
               color: #fff;
               font-weight: bold;
 
-              &>span {
-                position: relative
+              & > span {
+                position: relative;
               }
 
               &::before {
                 position: absolute;
-                left: 0;
                 right: 0;
+                left: 0;
                 height: 100%;
-                content: '';
                 background-color: #000;
                 opacity: 0.3;
+                content: '';
               }
             }
           }
 
           .svg-icon {
             display: flex;
-            justify-content: center;
-            align-items: center;
             flex: 1;
+            align-items: center;
+            justify-content: center;
             box-shadow: none;
           }
 
           &.active {
-            border-radius: 14px;
             border: 2px solid #18a0fb;
+            border-radius: 14px;
           }
         }
       }
     }
   }
 }
-
-
 
 .component-picker {
   .ae-popover-search .icons-pane .svg-icon {
@@ -791,12 +787,12 @@
   }
 
   .tree-current-node {
-    &>.svg-icon {
-      width: 32px;
-      height: 32px;
+    & > .svg-icon {
       display: flex;
       align-items: center;
       justify-content: center;
+      width: 32px;
+      height: 32px;
       font-size: 14px;
     }
   }
@@ -804,12 +800,12 @@
   .ae-tree {
     margin-bottom: 0;
 
-    &>li>.svg-icon {
-      width: 32px;
-      height: 32px;
+    & > li > .svg-icon {
       display: flex;
       align-items: center;
       justify-content: center;
+      width: 32px;
+      height: 32px;
       font-size: 14px;
     }
   }

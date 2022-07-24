@@ -26,7 +26,7 @@ function Toolbar() {
         data[item.id] = item.useSelector && item.useSelector(state);
         return data;
       }, {} as any),
-    isEqual
+    isEqual,
   );
 
   const buildClick = (item: AsanyTool) => (e: React.MouseEvent) => {

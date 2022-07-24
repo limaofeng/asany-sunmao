@@ -8,7 +8,7 @@ const defaultState: IUIToolbarState = {
 
 export default function reducer(
   state: IUIToolbarState,
-  action: AsanyAction<UIToolbarActionType | GlobalAsanyAction>
+  action: AsanyAction<UIToolbarActionType | GlobalAsanyAction>,
 ): IUIToolbarState {
   if (action.type === UIToolbarActionType.ToolbarSelect) {
     return { ...state, activeKeys: [...state.activeKeys, action.payload] };

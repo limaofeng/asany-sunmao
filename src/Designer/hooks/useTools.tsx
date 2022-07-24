@@ -44,7 +44,7 @@ export default function useTools(selector: Selector<AsanyTool[]>) {
   const allTools = useSelector(selector, (theNew, latest = []) => {
     return isEqual(
       theNew.map((item) => item.id),
-      latest.map((item) => item.id)
+      latest.map((item) => item.id),
     );
   });
 

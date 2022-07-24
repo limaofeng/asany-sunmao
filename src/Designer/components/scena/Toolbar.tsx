@@ -25,14 +25,17 @@ function Toolbar() {
         data[item.id] = item.useSelector && item.useSelector(state);
         return data;
       }, {} as any),
-    isEqual
+    isEqual,
   );
 
   return (
     <div className="asany-editor-scena-toolbar">
       <div className="layout-left">
         {tools
-          .filter((item) => (!item.position || item.position === 'left') && item.isVisibled!(focus[item.id]))
+          .filter(
+            (item) =>
+              (!item.position || item.position === 'left') && item.isVisibled!(focus[item.id]),
+          )
           .map((item, index) =>
             item.id === 'vertical-divider' ? (
               <span key={`${item.id}-${index}`} className="vertical-divider" />
@@ -50,7 +53,7 @@ function Toolbar() {
                 {iconRender(item.icon)}
                 {item.name && <span className="toolbar-icon-tip">{item.name}</span>}
               </a>
-            )
+            ),
           )}
       </div>
       <div className="layout-right">
@@ -73,7 +76,7 @@ function Toolbar() {
                 {iconRender(item.icon)}
                 {item.name && <span className="toolbar-icon-tip">{item.name}</span>}
               </a>
-            )
+            ),
           )}
       </div>
     </div>

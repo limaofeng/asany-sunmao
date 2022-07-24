@@ -10,7 +10,7 @@ const merge = (props: any[], newProps: any[]) => {
             newBolcks[index] = { ...i, ...item, version: (i.version || 0) + 1 };
           }
           return item.key === i.key;
-        })
+        }),
     ),
     ...newBolcks,
   ];

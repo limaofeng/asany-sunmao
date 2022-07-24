@@ -98,7 +98,7 @@ function Scena(props: ScenaProps) {
       console.warn('取消 Block 的选中效果');
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [disabled, onClick]
+    [disabled, onClick],
   );
   const handleScroll = (x: number, y: number) => {
     setScroll(x, y);
@@ -134,7 +134,7 @@ function Scena(props: ScenaProps) {
     const viewportWidth = clientWidth - lsw - rsw;
     setScroll(
       Math.max((viewportWidth - width - 30) / 2 + lsw, 0),
-      Math.max((clientHeight - height - 30) / 2, -(height * (1 - zoom)) / 2)
+      Math.max((clientHeight - height - 30) / 2, -(height * (1 - zoom)) / 2),
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [keepOpen, leftSiderbarWidth, minimizable, options?.width]);

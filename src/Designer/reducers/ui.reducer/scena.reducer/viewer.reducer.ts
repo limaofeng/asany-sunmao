@@ -7,7 +7,7 @@ const defaultState: ViewerState = {
 
 export default function reducer(
   state: ViewerState,
-  action: AsanyAction<UIScenaViewerActionType | GlobalAsanyAction>
+  action: AsanyAction<UIScenaViewerActionType | GlobalAsanyAction>,
 ): ViewerState {
   if (action.type === GlobalAsanyAction.Init) {
     return defaultState;

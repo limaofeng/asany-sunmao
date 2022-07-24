@@ -10,7 +10,7 @@ const defaultMoveableState: MoveableState = {
 
 export default function reducer(
   state: MoveableState,
-  action: AsanyAction<UIScenaMoveableActionType | GlobalAsanyAction | ProjectActionType>
+  action: AsanyAction<UIScenaMoveableActionType | GlobalAsanyAction | ProjectActionType>,
 ): MoveableState {
   if (action.type === UIScenaMoveableActionType.MoveableSelectedTargets) {
     return { ...state, selectedTargets: action.payload };

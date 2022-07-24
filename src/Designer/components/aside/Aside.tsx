@@ -78,7 +78,9 @@ function Aside(_: AsideProps) {
 
   useEffect(() => {
     const { container } = configuration.current!;
-    const navHeight = parseInt(getComputedStyle(container).getPropertyValue('--editor-navigation-height'));
+    const navHeight = parseInt(
+      getComputedStyle(container).getPropertyValue('--editor-navigation-height'),
+    );
     const top = navHeight + (scenaToolbarVisible ? 40 : 0);
     setTop(top);
   }, [scenaToolbarVisible]);

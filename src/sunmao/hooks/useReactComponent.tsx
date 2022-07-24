@@ -29,7 +29,7 @@ function createReactComponentComponent<T>(
   id: string | undefined,
   state: React.RefObject<UseReactComponentState>,
   emitter: EventEmitter,
-  dev: boolean
+  dev: boolean,
 ): React.ComponentType<T> {
   return React.forwardRef<any, any>(function (externalProps: ExternalProps, ref: any) {
     const { children, ...passthroughProps } = externalProps;
@@ -59,7 +59,8 @@ function createReactComponentComponent<T>(
 
     return (
       <ReactComponentProvider id={id} value={props} dev={dev} version={version}>
-        {component && React.createElement(component.component, { ...passthroughProps, ref } as any, children)}
+        {component &&
+          React.createElement(component.component, { ...passthroughProps, ref } as any, children)}
       </ReactComponentProvider>
     );
   });
@@ -68,13 +69,13 @@ function createReactComponentComponent<T>(
 export default function useReactComponent<T = ExternalProps>(
   id: string,
   injectProps: IComponentBlockData[] = [],
-  options?: IOptions
+  options?: IOptions,
 ): React.ComponentType<T> {
   const component = useComponent(id);
   const emitter = useMemo<EventEmitter>(() => new EventEmitter(), []);
   const state = useRef<UseReactComponentState>({ component, props: injectProps });
   const reactComponent = useRef<React.ComponentType<T>>(
-    createReactComponentComponent(options?.id, state, emitter, options?.dev || false)
+    createReactComponentComponent(options?.id, state, emitter, options?.dev || false),
   );
 
   const forceRender = useCallback(() => {

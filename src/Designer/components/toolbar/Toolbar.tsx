@@ -54,7 +54,7 @@ function Header(props: HeaderProps) {
         data[item.id] = item.useSelector && item.useSelector(state);
         return data;
       }, {} as any),
-    isEqual
+    isEqual,
   );
 
   const handClickBack = useCallback(() => onBack && onBack(), [onBack]);
@@ -70,10 +70,14 @@ function Header(props: HeaderProps) {
             <span className="title">{name}</span>
           </div>
           <div className="toolbar-center">
-            {tools.filter((item) => item.position === 'left' && item.isVisibled!(focus[item.id])).map(render, focus)}
+            {tools
+              .filter((item) => item.position === 'left' && item.isVisibled!(focus[item.id]))
+              .map(render, focus)}
           </div>
           <div className="toolbar-right">
-            {tools.filter((item) => item.position === 'right' && item.isVisibled!(focus[item.id])).map(render, focus)}
+            {tools
+              .filter((item) => item.position === 'right' && item.isVisibled!(focus[item.id]))
+              .map(render, focus)}
           </div>
         </>
       )}

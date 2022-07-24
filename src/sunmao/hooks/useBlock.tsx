@@ -14,12 +14,19 @@ import {
   UseBlockCache,
 } from '../typings';
 
-function useBlock<T extends IBlockDataProps = any, P = DivProvider>(options: IBlockOptions<T>): IUseBlock<T, P> {
+function useBlock<T extends IBlockDataProps = any, P = DivProvider>(
+  options: IBlockOptions<T>,
+): IUseBlock<T, P> {
   const sketch = useSketch();
   const store = useContext<IReactComponentStoreContext>(ReactComponentContext);
   // 获取 block 的 key 即原来的 parentBlockKey + key
   const { key } = useBlockContext(options.key);
-  const cache = useRef<UseBlockCache<T, P>>({ id: store.id + ':' + key, key, options, result: [] as any });
+  const cache = useRef<UseBlockCache<T, P>>({
+    id: store.id + ':' + key,
+    key,
+    options,
+    result: [] as any,
+  });
   const latestProps = useRef<any>(options.props);
   // 创建 BlockProvider，组合 useBlockContext 使用
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -110,7 +117,9 @@ function useBlock<T extends IBlockDataProps = any, P = DivProvider>(options: IBl
 
   const checkForUpdates = useCallback(() => {
     const { key } = cache.current;
-    const newProps = store.getState().blocks.find(({ key: itemKey }) => itemKey === key)?.props || latestProps.current;
+    const newProps =
+      store.getState().blocks.find(({ key: itemKey }) => itemKey === key)?.props ||
+      latestProps.current;
     if (isEqual(newProps, latestProps.current!)) {
       return;
     }
@@ -137,7 +146,7 @@ function useBlock<T extends IBlockDataProps = any, P = DivProvider>(options: IBl
       key,
     }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [latestProps.current, version]
+    [latestProps.current, version],
   );
 
   return cache.current.result;

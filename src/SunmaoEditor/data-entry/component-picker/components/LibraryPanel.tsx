@@ -42,7 +42,9 @@ const ComponentRender: React.ComponentType<IconRenderProps> = function (props: I
   return (
     <li
       onClick={handleClick}
-      className={classnames('tree-node-item tw-flex tw-flex-col tw-justify-end tw-items-center', { active: selected })}
+      className={classnames('tree-node-item tw-flex tw-flex-col tw-justify-end tw-items-center', {
+        active: selected,
+      })}
     >
       <div className="component-item-container">
         <ComponentPreview data={item} />
@@ -68,7 +70,7 @@ function LibraryPanel(props: LibraryPanelProps) {
     (data: any) => {
       onChange(data.value);
     },
-    [onChange]
+    [onChange],
   );
 
   return (

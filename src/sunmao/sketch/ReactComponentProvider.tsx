@@ -24,9 +24,12 @@ export const ReactComponentContext = React.createContext<IReactComponentStoreCon
 function useStore(id: string, dev: boolean): IReactComponentStoreContext {
   const sketch = useSketch();
   const [COMPONENT_ID] = useState(id || generateUUID());
-  const [state, dispatch] = useReducer<React.ReducerWithoutAction<IReactComponentState>>(reducers as any, {
-    blocks: [],
-  });
+  const [state, dispatch] = useReducer<React.ReducerWithoutAction<IReactComponentState>>(
+    reducers as any,
+    {
+      blocks: [],
+    },
+  );
   const [listeners] = useState<SubscribeCallback[]>([]);
   const handleUnsubscribe = useCallback(
     (callback: SubscribeCallback) => {
@@ -37,14 +40,14 @@ function useStore(id: string, dev: boolean): IReactComponentStoreContext {
         }
       };
     },
-    [listeners]
+    [listeners],
   );
   const handleSubscribe = useCallback(
     (callback: SubscribeCallback) => {
       listeners.unshift(callback);
       return handleUnsubscribe(callback);
     },
-    [handleUnsubscribe, listeners]
+    [handleUnsubscribe, listeners],
   );
   const handleDispatchSubscribe = useCallback(() => {
     for (const listener of listeners) {
@@ -81,7 +84,7 @@ export function useDispatch() {
 
 export function useSelector<Selected>(
   selector: Selector<Selected>,
-  equalityFn: EqualityFn<Selected> = defaultEqualityFn
+  equalityFn: EqualityFn<Selected> = defaultEqualityFn,
 ) {
   const store = useContext<IReactComponentStoreContext>(ReactComponentContext);
   return useInternalStoreSelector(store, selector, equalityFn);
@@ -111,6 +114,6 @@ export default function ReactComponentProvider(props: ReactComponentProviderProp
       </ReactComponentContext.Provider>
     ),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [version]
+    [version],
   );
 }

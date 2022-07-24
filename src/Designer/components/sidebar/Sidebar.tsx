@@ -38,7 +38,12 @@ function SiderBar(props: SiderBarProps) {
       })}
     >
       <Toolbar />
-      <Toolboard onResize={props.onResize} editor={editor} ref={control} setCollapsed={setCollapsed}>
+      <Toolboard
+        onResize={props.onResize}
+        editor={editor}
+        ref={control}
+        setCollapsed={setCollapsed}
+      >
         {Content && (
           <ToolPanel className="tool-panel-content">
             <Content />

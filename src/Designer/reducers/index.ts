@@ -30,7 +30,7 @@ const reducers = combineReducers(
     features: featureReducer,
     plugins: pluginReducer,
   },
-  defaultReducer
+  defaultReducer,
 );
 
 export const defaultValue = (mode: AsanyProviderMode, plugins: EditorPlugin[]): IAsanyState => {

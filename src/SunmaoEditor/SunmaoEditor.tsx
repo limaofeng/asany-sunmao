@@ -11,7 +11,7 @@ import './icons';
 
 const InternalSunmaoEditor = React.forwardRef(function InternalSunmaoEditor(
   props: SunmaoEditorProps,
-  ref?: React.ForwardedRef<IAsanyEditor>
+  ref?: React.ForwardedRef<IAsanyEditor>,
 ) {
   const { id, name, data, dashboard, onSave, onBack } = props;
 
@@ -19,13 +19,16 @@ const InternalSunmaoEditor = React.forwardRef(function InternalSunmaoEditor(
   const sketch = useSketch();
   const api = useRef<IAsanyEditor>(null);
 
-  const project = useDeepCompareMemo<SunmaoProject>(() => ({ id, name, data, type: 'component' }), [id, name, data]);
+  const project = useDeepCompareMemo<SunmaoProject>(
+    () => ({ id, name, data, type: 'component' }),
+    [id, name, data],
+  );
 
   const handleSave = useCallback(
     (project: AsanyProject) => {
       onSave && onSave(project.data);
     },
-    [onSave]
+    [onSave],
   );
 
   const multiRef = useMergedRef(api, ref!, () => {

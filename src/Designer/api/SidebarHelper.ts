@@ -70,7 +70,10 @@ export default class SidebarHelperImpl implements SidebarHelper {
       } else {
         toolboard.next(index, title, content, width || 250);
       }
-    } else if (typeof index === 'function' || (index.prototype && index.prototype.isReactComponent)) {
+    } else if (
+      typeof index === 'function' ||
+      (index.prototype && index.prototype.isReactComponent)
+    ) {
       toolboard.next(-1, undefined, index, title || 250);
     } else {
       toolboard.next(-1, index, title, content || 250);
@@ -84,7 +87,9 @@ export default class SidebarHelperImpl implements SidebarHelper {
   }
 
   async close(index?: number) {
-    this.editor.state.ui.sidebar.control!.current!.close(typeof index === 'number' ? index : undefined);
+    this.editor.state.ui.sidebar.control!.current!.close(
+      typeof index === 'number' ? index : undefined,
+    );
   }
 
   back(): void {

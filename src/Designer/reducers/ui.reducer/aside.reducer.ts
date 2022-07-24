@@ -7,7 +7,7 @@ const defaultState: IUIAsideState = {
 
 export default function reducer(
   state: IUIAsideState,
-  action: AsanyAction<UIAsideActionType | GlobalAsanyAction>
+  action: AsanyAction<UIAsideActionType | GlobalAsanyAction>,
 ): IUIAsideState {
   if (action.type === UIAsideActionType.CloseAside) {
     return { ...state, visible: false };

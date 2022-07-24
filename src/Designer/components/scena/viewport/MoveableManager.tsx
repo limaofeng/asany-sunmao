@@ -55,7 +55,7 @@ function MoveableManager(props: MoveableManagerProps) {
       const event = new CustomEvent<OnResizeStart>('moveable.resizeStart', { detail: e });
       e.target.dispatchEvent(event);
     },
-    [moveableData]
+    [moveableData],
   );
 
   const handleResize = useCallback(
@@ -64,7 +64,7 @@ function MoveableManager(props: MoveableManagerProps) {
       const event = new CustomEvent<OnResize>('moveable.resize', { detail: e });
       e.target.dispatchEvent(event);
     },
-    [moveableData]
+    [moveableData],
   );
 
   const handleResizeStop = useCallback((e: OnResizeEnd) => {

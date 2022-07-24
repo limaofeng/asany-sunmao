@@ -11,7 +11,7 @@ const defaultState: IFeatureState = {
 
 export default function reducer(
   state: IFeatureState,
-  action: AsanyAction<IFeatureActionType | GlobalAsanyAction>
+  action: AsanyAction<IFeatureActionType | GlobalAsanyAction>,
 ): IFeatureState {
   if (action.type === GlobalAsanyAction.Init) {
     return defaultState;
@@ -22,7 +22,7 @@ export default function reducer(
         state[key] = action.payload.includes(key);
         return state;
       },
-      { ...state }
+      { ...state },
     );
   }
   if (action.type === IFeatureActionType.FeatureDrag) {

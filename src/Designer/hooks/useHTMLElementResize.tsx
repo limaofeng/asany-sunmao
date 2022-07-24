@@ -124,7 +124,7 @@ function getElement(ele: HTMLElement, self: OneSelf) {
 
 export default function useHTMLElementResize(
   baseline?: React.RefObject<HTMLElement>,
-  self: OneSelf = 'self'
+  self: OneSelf = 'self',
 ): ResizeData {
   const prev = useRef(baseline?.current);
   const value = useRef<ResizeDataImpl>(new ResizeDataImpl());
@@ -136,7 +136,7 @@ export default function useHTMLElementResize(
       const rect = entry.contentRect as DOMRectReadOnly;
       value.current.setRect(rect);
       forceRender();
-    })
+    }),
   );
 
   useEffect(() => {

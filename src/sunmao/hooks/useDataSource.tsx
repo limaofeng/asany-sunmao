@@ -5,7 +5,10 @@ import { DataSource } from '../typings';
 
 import useSunmao from './useSunmao';
 
-function useLoadDataSource<P>(dataSourceLoader: DataSourceLoader<any> | undefined, param: P): DataSource | null {
+function useLoadDataSource<P>(
+  dataSourceLoader: DataSourceLoader<any> | undefined,
+  param: P,
+): DataSource | null {
   const [, forceRender] = useReducer((s) => s + 1, 0);
   const latestDataState = useRef<DataSource | null>(null);
 
@@ -26,7 +29,9 @@ function useLoadDataSource<P>(dataSourceLoader: DataSourceLoader<any> | undefine
 function useDataSource<P = any>(type: string, param?: P): DataSource | null {
   const sunmao = useSunmao();
   const [, forceRender] = useReducer((s) => s + 1, 0);
-  const latestDataSourceLoader = useRef<DataSourceLoader | undefined>(sunmao.getDataSourceLoader(type));
+  const latestDataSourceLoader = useRef<DataSourceLoader | undefined>(
+    sunmao.getDataSourceLoader(type),
+  );
 
   useEffect(() => {
     return sunmao.subscribe(() => {

@@ -68,7 +68,12 @@ function ComponentPanel() {
           <Panel header={group.title} key={group.title}>
             <ul className="component-content show-list">
               {group.components.map((item) => (
-                <ComponentItem key={item.name} {...item} createDragObject={group.createDragObject} type={group.type} />
+                <ComponentItem
+                  key={item.name}
+                  {...item}
+                  createDragObject={group.createDragObject}
+                  type={group.type}
+                />
               ))}
             </ul>
           </Panel>

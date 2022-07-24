@@ -67,7 +67,7 @@ class Sunmao {
     component: IComponentDefinition,
     dispatch: boolean = false,
     repeatable: boolean = true,
-    library: AggregationLibrary = this.library
+    library: AggregationLibrary = this.library,
   ): AggregationLibrary {
     if (!component.component) {
       console.error('组件[', component.name, ']未设置组件', component);
