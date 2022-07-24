@@ -43,11 +43,19 @@ function MoveableManager(props: MoveableManagerProps) {
   });
 
   const draggable = useMemo(() => {
-    return selectedTargets.length === 1 && !!selectedTargets[0].dataset['draggable'];
+    return (
+      selectedTargets.length === 1 &&
+      selectedTargets[0].dataset &&
+      !!selectedTargets[0].dataset['draggable']
+    );
   }, [selectedTargets]);
 
   const resizable = useMemo(() => {
-    return selectedTargets.length === 1 && !!selectedTargets[0].dataset['resizable'];
+    return (
+      selectedTargets.length === 1 &&
+      selectedTargets[0].dataset &&
+      !!selectedTargets[0].dataset['resizable']
+    );
   }, [selectedTargets]);
 
   const handleResizeStart = useCallback(
