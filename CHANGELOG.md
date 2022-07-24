@@ -1,3 +1,12 @@
+## [1.0.2](https://github.com/limaofeng/asany-sunmao/compare/v1.0.1...v1.0.2) (2022-07-24)
+
+
+### Features
+
+* 添加 changelog ([f6a958d](https://github.com/limaofeng/asany-sunmao/commit/f6a958d5b23c9ffb1c342fe50d1715254ad9d90f))
+
+
+
 ## 1.0.1 (2022-07-24)
 
 ### Features
