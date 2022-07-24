@@ -15,9 +15,8 @@ jobs:
           node-version: 16.x
 
       - name: Install deps and build (with cache)
-        run: ls && pwd
-      # - name: Install deps and build (with cache)
-      #   uses: bahmutov/npm-install@v1
+        # run: ls && pwd
+        uses: bahmutov/npm-install@v1
 
       - name: Lint
         run: yarn lint
