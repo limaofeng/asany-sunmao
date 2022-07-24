@@ -4,7 +4,7 @@ jobs:
   build:
     name: Build, lint, and test
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
@@ -15,7 +15,9 @@ jobs:
           node-version: 16.x
 
       - name: Install deps and build (with cache)
-        uses: bahmutov/npm-install@v1
+        run: ls && pwd
+      # - name: Install deps and build (with cache)
+      #   uses: bahmutov/npm-install@v1
 
       - name: Lint
         run: yarn lint
