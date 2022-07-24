@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
-import { ComponentTreeNode, IComponentBlockData } from 'sunmao';
-import { AsanyProject } from '@asany/editor';
+import { ComponentTreeNode, IComponentBlockData } from '../sunmao';
+import { AsanyProject } from '../Designer';
 
 export interface IComponentData {
   id: string;
@@ -46,6 +46,8 @@ export interface SunmaoEditorProps {
   dashboard?: ReactNode;
 
   onSave: OnSave;
+
+  loading?: boolean;
 
   onBack?: OnBack;
   /**

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { DndProvider } from 'react-dnd';
 import {
   Sunmao,
@@ -227,17 +227,25 @@ const blocks = [
 ];
 
 function TestSunmao() {
+  const [project, setProject] = useState<any>();
+  useEffect(() => {
+    setTimeout(() => {
+      setProject({
+        id: '231',
+        template: 'cn.asany.ui.sunmao.test.Dashboard',
+        blocks,
+      });
+    }, 5000);
+  }, []);
+
   return (
     <SunmaoEditor
       id="0"
       name="测试"
       viewport="iPhone 8"
+      loading={true}
       onSave={(data) => console.log(data)}
-      data={{
-        id: '231',
-        template: 'cn.asany.ui.sunmao.test.Dashboard',
-        blocks,
-      }}
+      data={project || { id: 'loading', data: { id: 'loading' } }}
     />
   );
 }

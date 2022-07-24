@@ -13,7 +13,7 @@ const InternalSunmaoEditor = React.forwardRef(function InternalSunmaoEditor(
   props: SunmaoEditorProps,
   ref?: React.ForwardedRef<IAsanyEditor>,
 ) {
-  const { id, name, data, dashboard, onSave, onBack } = props;
+  const { id, name, data, dashboard, onSave, onBack, loading } = props;
 
   const [version, forceRender] = useReducer((s) => s + 1, 0);
   const sketch = useSketch();
@@ -45,6 +45,17 @@ const InternalSunmaoEditor = React.forwardRef(function InternalSunmaoEditor(
       api.current!.scena.viewport(props.viewport.size[0], props.viewport.size[1]);
     }
   }, [version, props.viewport]);
+
+  useEffect(() => {
+    if (!api.current) {
+      return;
+    }
+    if (loading) {
+      api.current.scena.mask();
+    } else {
+      api.current.scena.unmask();
+    }
+  }, [loading]);
 
   return (
     <AsanyEditor
