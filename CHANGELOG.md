@@ -1,3 +1,12 @@
+## [1.0.9](https://github.com/limaofeng/asany-sunmao/compare/v1.0.8...v1.0.9) (2022-07-24)
+
+
+### Bug Fixes
+
+* selectedTargets is null ([2ae407f](https://github.com/limaofeng/asany-sunmao/commit/2ae407f74218bb73f5aeaee03547700f3ce90997))
+
+
+
 ## [1.0.8](https://github.com/limaofeng/asany-sunmao/compare/v1.0.7...v1.0.8) (2022-07-24)
 
 
