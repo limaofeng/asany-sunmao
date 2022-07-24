@@ -17,7 +17,9 @@ function MoveableManager(props: MoveableManagerProps) {
   const dispatch = useEditorDispatch();
   const snaps = useEditorSelector((state) => state.ui.scena.snaps);
   const moveableData = useEditorSelector((state) => state.ui.scena.moveable.data);
-  const selectedTargets = useEditorSelector((state) => state.ui.scena.moveable.selectedTargets);
+  const selectedTargets = useEditorSelector((state) =>
+    state.ui.scena.moveable.selectedTargets.filter((item) => !!item),
+  );
   const moveableEnable = useEditorSelector((state) => state.ui.scena.moveable.enable);
 
   const { vertical: verticalGuidelines, horizontal: horizontalGuidelines } = snaps;
@@ -43,19 +45,11 @@ function MoveableManager(props: MoveableManagerProps) {
   });
 
   const draggable = useMemo(() => {
-    return (
-      selectedTargets.length === 1 &&
-      selectedTargets[0].dataset &&
-      !!selectedTargets[0].dataset['draggable']
-    );
+    return selectedTargets.length === 1 && !!selectedTargets[0].dataset['draggable'];
   }, [selectedTargets]);
 
   const resizable = useMemo(() => {
-    return (
-      selectedTargets.length === 1 &&
-      selectedTargets[0].dataset &&
-      !!selectedTargets[0].dataset['resizable']
-    );
+    return selectedTargets.length === 1 && !!selectedTargets[0].dataset['resizable'];
   }, [selectedTargets]);
 
   const handleResizeStart = useCallback(
