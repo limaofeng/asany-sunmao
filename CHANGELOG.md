@@ -1,3 +1,12 @@
+## [1.0.6](https://github.com/limaofeng/asany-sunmao/compare/v1.0.5...v1.0.6) (2022-07-24)
+
+
+### Features
+
+* 修复 moveable enable ([5d1d955](https://github.com/limaofeng/asany-sunmao/commit/5d1d955b96f7de8eecd29a08ec2e9f9af5c95ff3))
+
+
+
 ## [1.0.5](https://github.com/limaofeng/asany-sunmao/compare/v1.0.4...v1.0.5) (2022-07-24)
 
 
