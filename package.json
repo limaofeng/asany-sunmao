@@ -23,6 +23,7 @@
   ],
   "module": "dist/esm/index.js",
   "typings": "dist/esm/index.d.ts",
+  "repository": "https://github.com/limaofeng/asany-sunmao",
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
