@@ -1,3 +1,12 @@
+## [1.0.5](https://github.com/limaofeng/asany-sunmao/compare/v1.0.4...v1.0.5) (2022-07-24)
+
+
+### Features
+
+* 支持 moveableEnable ([0ff9014](https://github.com/limaofeng/asany-sunmao/commit/0ff90149403c2f629abf6c8bdeeb1fd4a38ac264))
+
+
+
 ## [1.0.4](https://github.com/limaofeng/asany-sunmao/compare/v1.0.3...v1.0.4) (2022-07-24)
 
 
