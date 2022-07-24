@@ -5,6 +5,7 @@ import type { AsanyAction, MoveableState } from '../../../typings';
 
 const defaultMoveableState: MoveableState = {
   data: new MoveableData(new Memory()),
+  enable: true,
   selectedTargets: [],
 };
 
@@ -27,14 +28,18 @@ export default function reducer(
   //   // return { ...state, targets: state.targets.filter(item => item.id != action.payload.id) };
   //   return state;
   // }
-  // if (action.type === UIScenaMoveableActionType.MoveableDisable) {
-  //   state.setEnable(false);
-  //   return state;
-  // }
-  // if (action.type === UIScenaMoveableActionType.MoveableEnable) {
-  //   state.setEnable(true);
-  //   return state;
-  // }
+  if (action.type === UIScenaMoveableActionType.MoveableDisable) {
+    return {
+      ...state,
+      enable: false,
+    };
+  }
+  if (action.type === UIScenaMoveableActionType.MoveableEnable) {
+    return {
+      ...state,
+      enable: true,
+    };
+  }
   // if (action.type === UIScenaMoveableActionType.MoveableIgnoreTargets) {
   //   // return {
   //   //   ...state,

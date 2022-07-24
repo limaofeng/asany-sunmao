@@ -18,6 +18,7 @@ function MoveableManager(props: MoveableManagerProps) {
   const snaps = useEditorSelector((state) => state.ui.scena.snaps);
   const moveableData = useEditorSelector((state) => state.ui.scena.moveable.data);
   const selectedTargets = useEditorSelector((state) => state.ui.scena.moveable.selectedTargets);
+  const moveableEnable = useEditorSelector((state) => state.ui.scena.moveable.enable);
 
   const { vertical: verticalGuidelines, horizontal: horizontalGuidelines } = snaps;
 
@@ -76,7 +77,7 @@ function MoveableManager(props: MoveableManagerProps) {
     <Moveable
       ref={ref}
       container={container}
-      targets={selectedTargets}
+      targets={moveableEnable ? selectedTargets : []}
       elementGuidelines={elementGuidelines}
       verticalGuidelines={verticalGuidelines}
       horizontalGuidelines={horizontalGuidelines}

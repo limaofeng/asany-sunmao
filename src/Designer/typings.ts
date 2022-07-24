@@ -553,6 +553,7 @@ export interface IAsanyState {
 export interface MoveableState {
   data: MoveableData;
   ref?: React.RefObject<Moveable>;
+  enable: boolean;
   selectedTargets: Array<HTMLElement | SVGElement>;
 }
 
