@@ -76,6 +76,9 @@ export class Sketch {
   }
 
   getComponent(key: string): ReactComponentData | undefined {
+    if (!key) {
+      return undefined;
+    }
     const [id] = key.split(':');
     return this._components.get(id);
   }

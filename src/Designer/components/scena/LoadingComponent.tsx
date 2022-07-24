@@ -16,6 +16,7 @@ function LoadingComponent(props: LoadingComponentProps) {
   const handleAddEndListener = (node: HTMLElement, done: () => void) => {
     node.addEventListener('transitionend', done, false);
   };
+  console.log('loading',  loading)
   return (
     <CSSTransition
       in={loading}

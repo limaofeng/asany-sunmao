@@ -245,7 +245,7 @@ function TestSunmao() {
       viewport="iPhone 8"
       loading={true}
       onSave={(data) => console.log(data)}
-      data={project || { id: 'loading', data: { id: 'loading' } }}
+      data={project}
     />
   );
 }

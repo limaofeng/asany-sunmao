@@ -29,10 +29,10 @@ function Workspace() {
   //   return checkedKeys;
   // }, isEqual);
 
-  const data = useEditorSelector<IComponentData>((state) => state.project.data, isEqual);
+  const data = useEditorSelector<IComponentData>((state) => state.project?.data, isEqual);
 
-  const component = useReactComponent(data.template, data.blocks, {
-    id: data.id,
+  const component = useReactComponent(data?.template, data?.blocks, {
+    id: data?.id,
     dev: true,
   });
 

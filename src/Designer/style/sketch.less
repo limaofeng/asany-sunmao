@@ -33,18 +33,21 @@
 .border-grey-dark {
   border-color: #8795a1;
 }
-
+.asany-editor-body-container {
+  position: relative;
+}
 .asany-editor-loading {
   position: absolute;
-  top: var(--editor-navigation-height);
+  top: 0;
   left: 52px;
   z-index: 5;
   display: none;
   align-items: center;
   justify-content: center;
-  width: calc(100vw - 52px);
-  height: calc(100vh - var(--editor-navigation-height));
+  right: 0;
+  bottom: 0;
   background-color: #fff;
+  // top: var(--editor-navigation-height);
 
   &.scena-toolbar-visible {
     top: 90px;

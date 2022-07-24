@@ -26,7 +26,7 @@ function BlockLayers() {
     return activeKey.split(':')[1];
   });
 
-  const id = useEditorSelector((state) => state.project.data.id);
+  const id = useEditorSelector((state) => state.project?.data?.id);
 
   const blocks = sketch.useSelector(id, (state) => {
     if (!state.blocks) {

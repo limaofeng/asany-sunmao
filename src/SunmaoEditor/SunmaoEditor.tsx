@@ -55,7 +55,7 @@ const InternalSunmaoEditor = React.forwardRef(function InternalSunmaoEditor(
     } else {
       api.current.scena.unmask();
     }
-  }, [loading]);
+  }, [version, loading]);
 
   return (
     <AsanyEditor
