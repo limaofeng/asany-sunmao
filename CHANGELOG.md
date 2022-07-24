@@ -1,3 +1,12 @@
+## [1.0.8](https://github.com/limaofeng/asany-sunmao/compare/v1.0.7...v1.0.8) (2022-07-24)
+
+
+### Bug Fixes
+
+* 解决 selectedTargets dataset is null 的问题 ([8434c75](https://github.com/limaofeng/asany-sunmao/commit/8434c7523b2359b4d034b004667065610aee0e97))
+
+
+
 ## [1.0.7](https://github.com/limaofeng/asany-sunmao/compare/v1.0.6...v1.0.7) (2022-07-24)
 
 
