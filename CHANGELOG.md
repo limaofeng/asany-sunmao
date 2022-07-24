@@ -1,3 +1,17 @@
+## [1.0.7](https://github.com/limaofeng/asany-sunmao/compare/v1.0.6...v1.0.7) (2022-07-24)
+
+
+### Bug Fixes
+
+* 修复 loading ([4a5cfc7](https://github.com/limaofeng/asany-sunmao/commit/4a5cfc7035cd0793293cf967bc0b7753c20f8a1a))
+
+
+### Features
+
+* 编辑器支持 loading 设置 ([f6252fd](https://github.com/limaofeng/asany-sunmao/commit/f6252fd494e20d1d019d69f503fc3be03d3c1364))
+
+
+
 ## [1.0.6](https://github.com/limaofeng/asany-sunmao/compare/v1.0.5...v1.0.6) (2022-07-24)
 
 
