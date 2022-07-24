@@ -1,3 +1,12 @@
+## [1.0.4](https://github.com/limaofeng/asany-sunmao/compare/v1.0.3...v1.0.4) (2022-07-24)
+
+
+### Features
+
+* sunmao ([0dcc977](https://github.com/limaofeng/asany-sunmao/commit/0dcc977d07fa949eb9b0f61ba5e2756cfd455a37))
+
+
+
 ## [1.0.3](https://github.com/limaofeng/asany-sunmao/compare/v1.0.2...v1.0.3) (2022-07-24)
 
 
