@@ -12,42 +12,18 @@ interface ScreenProps {
 }
 
 function Screen({ children }: ScreenProps) {
-  const artboard = useRef<HTMLDivElement>(null);
   const screenHeader = useRef<HTMLDivElement>(null);
   const moveableContainer = useRef<HTMLDivElement>(null);
 
   const zoom = useEditorSelector((state) => state.ui.scena.zoom);
   const [width, height] = useEditorSelector((state) => state.ui.scena.screen.size);
-  const dustbin = useEditorSelector((state) => state.ui.scena.viewer.dustbin);
-
-  const manager = useDragDropManager();
-
-  const [{ handlerId }, connectDrop] = useDrop({
-    accept: 'dustbin',
-    canDrop() {
-      return false;
-    },
-    collect: (monitor) => ({
-      handlerId: monitor.getHandlerId(),
-    }),
-  });
-
-  connectDrop(artboard);
-
-  useEffect(() => {
-    if (!handlerId) {
-      return;
-    }
-    const registry: any = manager.getRegistry();
-    registry.types.set(handlerId, dustbin);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [handlerId, dustbin]);
 
   useEffect(() => {
     window.dispatchEvent(new Event('resize'));
   }, [width, height]);
 
   const style = { width, height };
+
   return (
     <>
       <div

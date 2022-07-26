@@ -5,3 +5,4 @@ export { default as Designer } from './Designer';
 export * from './Designer';
 export { default as SunmaoEditor } from './SunmaoEditor';
 export * from './SunmaoEditor';
+export { default as FlowEditor } from './FlowEditor';

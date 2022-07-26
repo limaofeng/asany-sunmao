@@ -201,6 +201,7 @@ export interface IScena {
     tools?: AsanyTool[];
     visible?: boolean;
   };
+  screen?: string;
   workspace?: ComponentType<any>;
   onClick?(editor: IAsanyEditor): void;
 }

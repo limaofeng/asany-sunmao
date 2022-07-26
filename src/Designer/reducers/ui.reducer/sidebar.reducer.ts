@@ -79,12 +79,12 @@ export default function reducer(
   if (action.type === UISidebarActionType.SetSidebar) {
     const content = action.payload.content;
     const width = content ? action.payload.width || state.width : 0;
-    const minimizable = action.payload.minimizable || state.minimizable;
+    const minimizable = !!action.payload.minimizable;
     const minWidth = action.payload.minWidth || state.minWidth;
     return {
       ...state,
-      minWidth,
-      width,
+      minWidth: minimizable ? 3 : minWidth,
+      width: minimizable ? 3 : width,
       content,
       minimizable: !action.payload.visible || minimizable,
       tools: action.payload.tools,

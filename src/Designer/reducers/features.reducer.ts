@@ -18,11 +18,11 @@ export default function reducer(
   }
   if (action.type === IFeatureActionType.SetFeatures) {
     return Object.keys(defaultState).reduce(
-      (state: any, key) => {
-        state[key] = action.payload.includes(key);
-        return state;
-      },
-      { ...state },
+      function (state: any, key) {
+      state[key] = !!action.payload.includes(key);
+      return state as any;
+    },
+      { ...state } as any,
     );
   }
   if (action.type === IFeatureActionType.FeatureDrag) {

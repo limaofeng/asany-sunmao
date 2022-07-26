@@ -44,6 +44,12 @@ export function reducer(
     return {
       ...state,
       ...action.payload,
+      screen: action.payload.screen
+        ? {
+            id: action.payload.screen,
+            size: [undefined, undefined],
+          }
+        : defaultState.screen,
       workspace,
       toolbar: {
         ...(state as any).toolbar,
