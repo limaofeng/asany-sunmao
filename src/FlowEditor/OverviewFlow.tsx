@@ -14,7 +14,11 @@ import { edges as initialEdges, nodes as initialNodes } from './initial-elements
 let id = 0;
 const getId = () => `dndnode_${id++}`;
 
-const OverviewFlow = () => {
+type OverviewFlowProps = {
+  onClick: () => void;
+};
+
+const OverviewFlow = (props: OverviewFlowProps) => {
   const reactFlowWrapper = useRef<HTMLDivElement>(null);
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes as any);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
