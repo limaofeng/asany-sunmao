@@ -1,3 +1,12 @@
+## [1.0.11](https://github.com/limaofeng/asany-sunmao/compare/v1.0.10...v1.0.11) (2022-08-25)
+
+
+### Bug Fixes
+
+* 解决 useReactComponent 更新问题 ([ed55af1](https://github.com/limaofeng/asany-sunmao/commit/ed55af10255cb1c8764a15cd9fd3f74432d4590e))
+
+
+
 ## [1.0.10](https://github.com/limaofeng/asany-sunmao/compare/v1.0.9...v1.0.10) (2022-08-01)
 
 
