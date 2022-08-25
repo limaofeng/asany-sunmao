@@ -48,13 +48,11 @@ function createReactComponentComponent<T>(
     useEffect(() => {
       for (const key of Object.keys(externalProps)) {
         if (cache.current[key] !== externalProps[key]) {
+          cache.current = externalProps;
           forceRender();
           return;
         }
       }
-      return () => {
-        cache.current = externalProps;
-      };
     }, [externalProps]);
 
     return (
