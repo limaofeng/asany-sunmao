@@ -113,7 +113,7 @@ const Editor = React.forwardRef(function Editor(
           className={classnames({
             'scena-toolbar-visible': scenaToolbarVisible,
           })}
-          loading={loading}
+          loading={loading || externalLoading}
           style={{
             paddingRight: visible ? control?.current?.width : 0,
           }}
