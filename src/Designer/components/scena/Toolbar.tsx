@@ -18,6 +18,7 @@ function iconRender(icon: any) {
 }
 
 function Toolbar() {
+  const sidebarWidth = useEditorSelector((state) => state.ui.sidebar.width);
   const tools = useTools((state) => state.ui.scena.toolbar.tools);
   const focus = useEditorSelector(
     (state) =>
@@ -29,7 +30,13 @@ function Toolbar() {
   );
 
   return (
-    <div className="asany-editor-scena-toolbar">
+    <div
+      className="asany-editor-scena-toolbar"
+      style={{
+        width: `calc(100% - ${sidebarWidth}px)`,
+        marginLeft: sidebarWidth,
+      }}
+    >
       <div className="layout-left">
         {tools
           .filter(
