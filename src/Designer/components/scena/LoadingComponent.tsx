@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react';
+import React, { CSSProperties, useEffect, useState } from 'react';
 
 import classnames from 'classnames';
 import { CSSTransition } from 'react-transition-group';
@@ -12,13 +12,21 @@ export interface LoadingComponentProps {
 }
 
 function LoadingComponent(props: LoadingComponentProps) {
-  const { loading, className, style } = props;
+  const { className, style } = props;
+
+  const [loading, setLoading] = useState(false);
+
   const handleAddEndListener = (node: HTMLElement, done: () => void) => {
     node.addEventListener('transitionend', done, false);
   };
+
+  useEffect(() => {
+    setLoading(!!props.loading);
+  }, [props.loading]);
+
   return (
     <CSSTransition
-      in={loading}
+      in={!!loading}
       addEndListener={handleAddEndListener}
       classNames="asany-editor-loading"
     >

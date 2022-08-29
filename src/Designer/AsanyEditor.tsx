@@ -95,7 +95,11 @@ const Editor = React.forwardRef(function Editor(
   useImperativeHandle(ref, () => api);
 
   return (
-    <div className={classnames('asany-editor sketch-container', className)}>
+    <div
+      className={classnames('asany-editor sketch-container', className, {
+        'asany-editor-root-loading': loading || externalLoading,
+      })}
+    >
       <Toolbar {...props} />
       <div className="asany-editor-body-container">
         <div

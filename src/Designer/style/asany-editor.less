@@ -4,21 +4,42 @@ p {
   margin: 0;
   padding: 0;
 }
+
 .asany-editor {
+
+  .sidebar-resizer,
+  .asany-editor-scena {
+    opacity: 1;
+    transition: opacity .5s;
+  }
+
+  &.asany-editor-root-loading {
+    .sidebar-resizer {
+      opacity: 0;
+    }
+    .asany-editor-scena {
+      opacity: 0;
+    }
+  }
+
   &-scena {
     &.mini-toolbar {
+
       .box,
       .ruler.horizontal,
       .ruler.vertical {
         top: 40px;
       }
+
       .infinite-viewer {
         top: 40px;
       }
+
       .asany-editor-scena-toolbar {
         display: flex;
       }
     }
+
     &-toolbar {
       position: absolute;
       z-index: 4;
@@ -28,12 +49,14 @@ p {
       padding-left: 16px;
       background-color: #fff;
       border-bottom: #dfe1e3 1px solid;
+
       .layout-left {
         display: flex;
         flex: 1;
         align-items: center;
         height: 40px;
       }
+
       .layout-right {
         display: flex;
         align-items: center;
@@ -74,8 +97,9 @@ p {
       }
     }
   }
+
   &-sidebar {
-    &.collapsed > .sidebar-resizer > .handle {
+    &.collapsed>.sidebar-resizer>.handle {
       z-index: 15;
     }
 
@@ -84,6 +108,7 @@ p {
       left: 52px;
       z-index: 1;
       width: 300px;
+
       &.resizer.direction-x {
         height: calc(100vh - var(--editor-navigation-height));
       }
@@ -102,26 +127,30 @@ p {
 
       &.minimizable {
         &.direction-x {
-          > .handle {
+          >.handle {
             right: -5px;
           }
         }
-        > .tool-panel-content {
+
+        >.tool-panel-content {
           opacity: 0;
         }
       }
     }
+
     .sidebar-panel {
       display: flex;
       flex-direction: column;
       height: 100%;
       overflow: hidden;
     }
+
     .sidebar-subpanel {
       display: flex;
       flex-direction: column;
       height: 100%;
       overflow: hidden;
+
       &-header {
         display: flex;
         align-content: center;
@@ -140,6 +169,7 @@ p {
           font-size: 12px;
           transition: flex 0.2s ease-in-out 0s;
         }
+
         .header-right {
           display: flex;
           align-items: center;
@@ -163,6 +193,7 @@ p {
             svg {
               transform: rotate(180deg);
             }
+
             &.expanded {
               svg {
                 transform: rotate(0deg);
@@ -171,11 +202,13 @@ p {
           }
         }
       }
+
       &-body {
         flex: 1 1 0%;
       }
     }
   }
+
   .svg-icon {
     display: inline-block;
     color: inherit;
@@ -188,16 +221,20 @@ p {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  .svg-icon > * {
+
+  .svg-icon>* {
     line-height: 1;
   }
+
   .svg-icon svg {
     display: inline-block;
   }
+
   .svg-icon::before {
     display: none;
   }
 }
+
 .sketch-container .sketch-sidebar.collapsed,
 .sketch-container .sketch-sidebar {
   .resizer {
@@ -249,12 +286,14 @@ p {
 
 .asanyeditor-dsign-light-popover {
   flex: 1;
+
   &.asanyeditor-dsign-popover .ant-popover-content .ant-popover-inner-content {
     width: 304px;
   }
 
   .ae-popover {
     font-size: 12px;
+
     .ae-popover-header {
       height: 40px;
       padding: 0 8px 0 16px;
@@ -265,17 +304,21 @@ p {
         font-size: 12px;
         line-height: 32px;
       }
+
       .svg-icon {
         font-size: 14px;
       }
     }
+
     .ae-popover-search {
       height: 32px;
       padding: 6px;
       border-bottom: #dfe1e3 1px solid;
+
       .scrubbable-control:not(.disabled):hover {
         border: 1px solid transparent;
       }
+
       .scrubbable-control:not(:disabled):focus-within {
         height: 30px;
         margin: 0;
@@ -284,6 +327,7 @@ p {
         outline-offset: -2px;
       }
     }
+
     .ae-popover-content {
       .tree-node-content {
         .tree-node-item-list {
@@ -293,11 +337,13 @@ p {
             margin-bottom: 8px;
             color: var(--primary-color);
             cursor: pointer;
+
             &.active {
               .svg-icon {
                 box-shadow: 0 0 0 2px #18a0fb;
               }
             }
+
             .svg-icon {
               width: 48px;
               height: 48px;
@@ -306,6 +352,7 @@ p {
               border-radius: 2px;
               transition: transform 0.3s ease-in-out;
             }
+
             .tree-node-item-title {
               width: 56px;
               height: 24px;
@@ -314,9 +361,11 @@ p {
               text-align: center;
               text-overflow: ellipsis;
             }
+
             &:hover:not(.active) {
               background-color: var(--gray-darkest);
               border-radius: 4px;
+
               .svg-icon {
                 transform: scale(1.4);
               }
@@ -332,8 +381,10 @@ p {
   .icon-preview {
     font-size: 14px;
   }
+
   .clean-up {
     margin-left: 8px;
+
     .svg-icon {
       color: rgba(0, 0, 0, 0.25);
       font-size: 12px;
