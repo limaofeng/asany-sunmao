@@ -26,7 +26,8 @@ interface AsanyProps {
   className?: string;
   onSave?: (data: AsanyProject) => void;
   onBack?: () => void;
-  loading?: React.ComponentType<LoadingComponentProps>;
+  loading?: boolean;
+  loadingComponent?: React.ComponentType<LoadingComponentProps>;
   container: React.ComponentType<any>;
   children?: React.ReactNode;
 }
@@ -36,7 +37,8 @@ const Editor = React.forwardRef(function Editor(
     className,
     onSave,
     container,
-    loading: LoadingComponent = DefaultLoadingComponent,
+    loading: externalLoading,
+    loadingComponent: LoadingComponent = DefaultLoadingComponent,
     children,
     ...props
   }: AsanyProps,
@@ -65,6 +67,16 @@ const Editor = React.forwardRef(function Editor(
   const scenaToolbarVisible = useEditorSelector((state) => state.ui.scena.toolbar.visible);
   const loading = useEditorSelector((state) => state.ui.scena.loading);
   const control = useEditorSelector((state) => state.ui.aside.control);
+
+  useEffect(() => {
+    if (typeof externalLoading !== 'boolean') {
+      return;
+    }
+    dispatch({
+      type: ActionType.Loading,
+      payload: externalLoading,
+    });
+  }, [externalLoading]);
 
   useEffect(() => {
     if (!onSave) {
@@ -113,7 +125,8 @@ const Editor = React.forwardRef(function Editor(
 
 interface AsanyWarpperProps {
   className?: string;
-  loading?: React.ComponentType<LoadingComponentProps>;
+  loading?: boolean;
+  loadingComponent?: React.ComponentType<LoadingComponentProps>;
   project: AsanyProject;
   wrapper?: ComponentType<any>;
   container?: ComponentType<any>;
@@ -132,6 +145,7 @@ function AsanyEditor(props: AsanyWarpperProps, ref?: React.ForwardedRef<IAsanyEd
     container = RuntimeContainer,
     plugins = [],
     loading,
+    loadingComponent,
     className,
   } = props;
   const [version, forceRender] = useReducer((s) => s + 1, 0);
@@ -149,6 +163,7 @@ function AsanyEditor(props: AsanyWarpperProps, ref?: React.ForwardedRef<IAsanyEd
         className={className}
         onSave={onSave}
         loading={loading}
+        loadingComponent={loadingComponent}
         container={container}
         onBack={onBack}
       >
