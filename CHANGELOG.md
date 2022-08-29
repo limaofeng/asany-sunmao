@@ -1,3 +1,12 @@
+## [1.0.15](https://github.com/limaofeng/asany-sunmao/compare/v1.0.14...v1.0.15) (2022-08-29)
+
+
+### Bug Fixes
+
+* 工具栏布局调整 ([826d717](https://github.com/limaofeng/asany-sunmao/commit/826d717266e0641dedc81fbfab10b3bafb7aaabc))
+
+
+
 ## [1.0.14](https://github.com/limaofeng/asany-sunmao/compare/v1.0.13...v1.0.14) (2022-08-29)
 
 
