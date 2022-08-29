@@ -1,3 +1,12 @@
+## [1.0.12](https://github.com/limaofeng/asany-sunmao/compare/v1.0.11...v1.0.12) (2022-08-29)
+
+
+### Bug Fixes
+
+* 优化 loading 组件设置方法 ([1431d3b](https://github.com/limaofeng/asany-sunmao/commit/1431d3ba5de6dfc2e4671965c48315ea93d00de3))
+
+
+
 ## [1.0.11](https://github.com/limaofeng/asany-sunmao/compare/v1.0.10...v1.0.11) (2022-08-25)
 
 
