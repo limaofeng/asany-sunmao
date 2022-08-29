@@ -1,3 +1,12 @@
+## [1.0.14](https://github.com/limaofeng/asany-sunmao/compare/v1.0.13...v1.0.14) (2022-08-29)
+
+
+### Bug Fixes
+
+*  优化 loading 逻辑 ([2ce17de](https://github.com/limaofeng/asany-sunmao/commit/2ce17de8cdbc6bd9ba5ff074ca38cc75f371ea3c))
+
+
+
 ## [1.0.13](https://github.com/limaofeng/asany-sunmao/compare/v1.0.12...v1.0.13) (2022-08-29)
 
 
