@@ -157,7 +157,7 @@ function PropertiesPanel(props: PropertiesPanelProps, ref: React.ForwardedRef<IP
               activeKey={activeKey}
               onChange={handleChange}
               tabBarExtraContent={
-                <a href="#close" className="close" onClick={onClose}>
+                <a className="close" onClick={onClose}>
                   <Icon name="AsanyEditor/Cross" />
                 </a>
               }
@@ -172,7 +172,7 @@ function PropertiesPanel(props: PropertiesPanelProps, ref: React.ForwardedRef<IP
             <>
               <div className="settings-menu-header">
                 <h4>{title}</h4>
-                <a href="#close" className="close" onClick={onClose}>
+                <a className="close" onClick={onClose}>
                   <Icon name="AsanyEditor/Cross" />
                 </a>
               </div>

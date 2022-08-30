@@ -360,7 +360,7 @@ export function ToolPanel(props: ToolPanelProps) {
         <div className="panel-header">
           <span className="panel-header-title">{title}</span>
           {closable && (
-            <a href="#close" className="panel-header-info" onClick={handleClose}>
+            <a className="panel-header-info" onClick={handleClose}>
               <Icon name="AsanyEditor/Cross" />
             </a>
           )}
