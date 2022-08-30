@@ -1,3 +1,13 @@
+## [1.0.21](https://github.com/limaofeng/asany-sunmao/compare/v1.0.20...v1.0.21) (2022-08-30)
+
+
+### Bug Fixes
+
+*  去除 a 链接锚点 ([5882f41](https://github.com/limaofeng/asany-sunmao/commit/5882f417a72643d613e199c87925738e7c2a4c44))
+* 修复导出 EditorLibrary 方式 ([a3f3ba0](https://github.com/limaofeng/asany-sunmao/commit/a3f3ba027f75c3499a54f13593be0aad9dcdfd09))
+
+
+
 ## [1.0.20](https://github.com/limaofeng/asany-sunmao/compare/v1.0.19...v1.0.20) (2022-08-30)
 
 
