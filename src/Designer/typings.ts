@@ -327,7 +327,7 @@ export type SunmaoCustomizer = {
   id?: string;
   customizer: ICustomizer;
   value?: any;
-  watchValue?: (callback: (value: any) => void) => () => void;
+  watchValue?: (callback: (value: any) => void) => ((() => void) | void);
   update: (value: any) => void;
 };
 

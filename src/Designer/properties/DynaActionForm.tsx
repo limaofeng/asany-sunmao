@@ -198,6 +198,7 @@ const DynaActionForm = ({
 
   useEffect(() => {
     if (value && !isEqual(form.getFieldsValue(), value)) {
+      form.resetFields();
       form.setFieldsValue({ ...defaultValue.current, ...value });
     }
   }, [value]);
