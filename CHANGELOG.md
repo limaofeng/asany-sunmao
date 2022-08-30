@@ -1,3 +1,12 @@
+## [1.0.25](https://github.com/limaofeng/asany-sunmao/compare/v1.0.24...v1.0.25) (2022-08-30)
+
+
+### Bug Fixes
+
+*  解决属性面板显示过时数据 ([7c7b2f1](https://github.com/limaofeng/asany-sunmao/commit/7c7b2f108eb2bdc042bc782ab906af8a8fd67fb1))
+
+
+
 ## [1.0.24](https://github.com/limaofeng/asany-sunmao/compare/v1.0.23...v1.0.24) (2022-08-30)
 
 
