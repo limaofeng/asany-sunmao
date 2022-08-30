@@ -1,3 +1,12 @@
+## [1.0.19](https://github.com/limaofeng/asany-sunmao/compare/v1.0.18...v1.0.19) (2022-08-30)
+
+
+### Bug Fixes
+
+* 工具栏 render 逻辑优化 ([1898a46](https://github.com/limaofeng/asany-sunmao/commit/1898a460caf9dcc0a7553293bbf8a0e8e89c2b67))
+
+
+
 ## [1.0.18](https://github.com/limaofeng/asany-sunmao/compare/v1.0.17...v1.0.18) (2022-08-30)
 
 
