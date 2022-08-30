@@ -1,3 +1,12 @@
+## [1.0.18](https://github.com/limaofeng/asany-sunmao/compare/v1.0.17...v1.0.18) (2022-08-30)
+
+
+### Bug Fixes
+
+* 解决 asany-editor-scena-toolbar 宽度问题 ([cf323cc](https://github.com/limaofeng/asany-sunmao/commit/cf323ccaca359263141be1e0974449ce97498014))
+
+
+
 ## [1.0.17](https://github.com/limaofeng/asany-sunmao/compare/v1.0.16...v1.0.17) (2022-08-30)
 
 
