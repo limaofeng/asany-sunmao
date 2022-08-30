@@ -1,3 +1,12 @@
+## [1.0.20](https://github.com/limaofeng/asany-sunmao/compare/v1.0.19...v1.0.20) (2022-08-30)
+
+
+### Bug Fixes
+
+* 优化编辑器组件导出方式 ([ed58906](https://github.com/limaofeng/asany-sunmao/commit/ed589060cdb98c6214b935a836627ded86e21358))
+
+
+
 ## [1.0.19](https://github.com/limaofeng/asany-sunmao/compare/v1.0.18...v1.0.19) (2022-08-30)
 
 
