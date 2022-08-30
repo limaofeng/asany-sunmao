@@ -8,7 +8,7 @@ nav:
 
 ```jsx
 import React, { useEffect } from 'react';
-import { Sunmao, FlowEditor, SunmaoProvider, editorLibrary } from '@asany/sunmao';
+import { Sunmao, FlowEditor, SunmaoProvider, EditorLibrary } from '@asany/sunmao';
 
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
@@ -21,7 +21,7 @@ function FlowEditorDemo() {
   const sunmao = new Sunmao();
 
   useEffect(() => {
-    sunmao.addLibrary(editorLibrary);
+    sunmao.addLibrary(new EditorLibrary());
   }, []);
 
   return (
