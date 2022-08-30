@@ -1,7 +1,7 @@
 import React, { memo, useEffect, useState } from 'react';
 
 import Icon from '@asany/icons';
-import { ICustomizer, IField } from 'sunmao';
+import { ICustomizer, IField } from '../../../sunmao/typings';
 
 import DynaActionForm from '../DynaActionForm';
 

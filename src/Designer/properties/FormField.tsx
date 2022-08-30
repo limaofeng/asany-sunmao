@@ -1,7 +1,7 @@
 import React from 'react';
 
 import classnames from 'classnames';
-import { IField } from 'sunmao';
+import { IField } from '../../sunmao';
 
 interface FormFieldProps {
   field: IField;

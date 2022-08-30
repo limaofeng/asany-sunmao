@@ -1,10 +1,10 @@
 import React, { MutableRefObject, memo } from 'react';
 
 import Icon from '@asany/icons';
-import { useReactComponent } from 'sunmao';
 
 import { IMultipleWrapperData } from './MultipleWrapper';
 import { SortableHandler } from './WrapperItem';
+import { useReactComponent } from '../../../sunmao';
 
 export interface WrapperItemProps {
   /** 可以删除(显示删除图标) */
