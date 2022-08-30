@@ -1,3 +1,12 @@
+## [1.0.22](https://github.com/limaofeng/asany-sunmao/compare/v1.0.21...v1.0.22) (2022-08-30)
+
+
+### Bug Fixes
+
+*  解决编译问题 ([e3f28f3](https://github.com/limaofeng/asany-sunmao/commit/e3f28f36d702e6b975548db33567bb325e53cadb))
+
+
+
 ## [1.0.21](https://github.com/limaofeng/asany-sunmao/compare/v1.0.20...v1.0.21) (2022-08-30)
 
 
