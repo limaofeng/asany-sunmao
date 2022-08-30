@@ -13,7 +13,7 @@ class EditorLibrary {
   Input = Input;
 
   @component({})
-  Checkbox = Checkbox;
+  Checkbox = Checkbox as unknown as React.Component;
 
   @component({})
   CheckboxGroup = Checkbox.Group;
@@ -28,22 +28,22 @@ class EditorLibrary {
   Select = Select;
 
   @component({})
-  Switch = Switch;
+  Switch = Switch as unknown as React.Component;
 
   @component({})
   TextArea = TextArea;
 
   @component({})
-  DsignColor = DsignColor;
+  DsignColor = DsignColor as unknown as React.Component;
 
   @component({})
   MultipleWrapper = MultipleWrapper;
 
   @component({})
-  PopoverWrapper = WrapperPopover;
+  PopoverWrapper = WrapperPopover as unknown as React.Component;
 
   @component({})
-  DefaultMultipleWrapperItem = WrapperItem;
+  DefaultMultipleWrapperItem = WrapperItem as unknown as React.Component;
 }
 
 export default EditorLibrary;
