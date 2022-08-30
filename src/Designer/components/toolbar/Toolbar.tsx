@@ -1,12 +1,12 @@
 import React, { useCallback } from 'react';
 
 import Icon from '@asany/icons';
-import classnames from 'classnames';
 import isEqual from 'lodash/isEqual';
 
 import useTools from '../../hooks/useTools';
 import { useEditorSelector } from '../../hooks';
 import { AsanyTool } from '../..';
+import DefaultAsanyTool from './DefaultAsanyTool';
 
 interface HeaderProps {
   onBack?: () => void;
@@ -23,20 +23,34 @@ function iconRender(icon: any) {
 }
 
 export function render(item: AsanyTool, focus: any) {
-  const disabled = item.isDisabled!(focus[item.id]);
   return item.render ? (
-    <item.render key={item.id} {...(item as any)} disabled={disabled} />
+    item.render(item, {
+      key: `${item.id}`,
+      style: item.style,
+      disabled: item.isDisabled!(focus[item.id]),
+      active: item.isSelected!(focus[item.id]),
+      onClick: item.onClick as any,
+      children: (
+        <>
+          {iconRender(item.icon)}
+          {item.name && <span className="toolbar-icon-tip">{item.name}</span>}
+        </>
+      ),
+    })
   ) : (
-    // eslint-disable-next-line jsx-a11y/anchor-is-valid
-    <a
-      key={item.id}
-      className={classnames('toolbar-icon', item.className, { disabled })}
-      onClick={item.onClick as any}
+    <DefaultAsanyTool
+      key={`${item.id}`}
       style={item.style}
-    >
-      {iconRender(item.icon)}
-      {item.name && <span className="toolbar-icon-tip">{item.name}</span>}
-    </a>
+      disabled={item.isDisabled!(focus[item.id])}
+      active={item.isSelected!(focus[item.id])}
+      onClick={item.onClick as any}
+      children={
+        <>
+          {iconRender(item.icon)}
+          {item.name && <span className="toolbar-icon-tip">{item.name}</span>}
+        </>
+      }
+    />
   );
 }
 

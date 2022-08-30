@@ -1,4 +1,4 @@
-import { CSSProperties, ComponentType, ReactElement } from 'react';
+import React, { CSSProperties, ComponentType, ReactElement } from 'react';
 
 import Moveable from 'react-moveable';
 import {
@@ -38,6 +38,16 @@ export interface ToolPanel {
 export type UndoFunc = (editor: IAsanyEditor) => void;
 
 export type ToolClick = (editor: IAsanyEditor) => UndoFunc | void;
+
+export type AsanyToolProps = {
+  key?: string;
+  className?: string;
+  style?: CSSProperties;
+  disabled?: boolean;
+  active?: boolean;
+  onClick?: () => void;
+  children?: React.ReactNode;
+};
 
 export interface AsanyTool {
   /**
@@ -88,7 +98,7 @@ export interface AsanyTool {
   /**
    * 自定义渲染逻辑
    */
-  render?: (item: AsanyToolData) => React.ReactElement;
+  render?: (item: AsanyTool, props: AsanyToolProps) => React.ReactElement;
   /**
    * 样式
    */
@@ -98,54 +108,6 @@ export interface AsanyTool {
    */
   style?: CSSProperties;
 }
-
-export type AsanyToolData = {
-  /**
-   * 工具 ID
-   */
-  id: string;
-  /**
-   * 工具图标，可以使用组件
-   */
-  icon?: any;
-  /**
-   * 工具名称
-   */
-  name?: string;
-  /**
-   * 是否可见
-   */
-  visibled?: boolean;
-  /**
-   * 是否禁用
-   */
-  disabled?: boolean;
-  /**
-   * 是否选中
-   */
-  selected?: boolean;
-  /**
-   * 工具位置
-   */
-  position?: ToolPosition;
-  /**
-   * 关注的值，会传递到 isVisibled / isDisabled / isSelected 的参数
-   * 因为需要相应状态变化，需要设置该属性，不然可能出现页面不刷新的问题
-   */
-  useSelector?: Selector<any>;
-  /**
-   * 互斥标示，同一组的按钮，选中会出现互斥的效果
-   */
-  mutex?: string;
-  /**
-   * 点击事件
-   */
-  onClick: any;
-  /**
-   * 取消选中函数，一般自动生成
-   */
-  deselect: UndoFunc | void;
-};
 
 export type Feature = 'zoom' | 'ruler' | 'selecto' | 'drag';
 

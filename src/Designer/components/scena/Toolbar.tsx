@@ -6,6 +6,7 @@ import isEqual from 'lodash/isEqual';
 
 import useTools from '../../hooks/useTools';
 import { useEditorSelector } from '../../hooks';
+import DefaultAsanyTool from '../toolbar/DefaultAsanyTool';
 
 function iconRender(icon: any) {
   if (!icon) {
@@ -28,6 +29,21 @@ function Toolbar() {
     isEqual,
   );
 
+  {
+    /* <a
+                key={`${item.id}-${index}`}
+                onClick={item.onClick as any}
+                className={classnames('toolbar-icon', item.className, {
+                  disabled: item.isDisabled!(focus[item.id]),
+                  active: item.isSelected!(focus[item.id]),
+                })}
+                style={item.style}
+              >
+                {iconRender(item.icon)}
+                {item.name && <span className="toolbar-icon-tip">{item.name}</span>}
+              </a> */
+  }
+
   return (
     <div className="asany-editor-scena-toolbar">
       <div className="layout-left">
@@ -39,20 +55,34 @@ function Toolbar() {
           .map((item, index) =>
             item.id === 'vertical-divider' ? (
               <span key={`${item.id}-${index}`} className="vertical-divider" />
+            ) : item.render ? (
+              item.render(item, {
+                key: `${item.id}-${index}`,
+                style: item.style,
+                disabled: item.isDisabled!(focus[item.id]),
+                active: item.isSelected!(focus[item.id]),
+                onClick: item.onClick as any,
+                children: (
+                  <>
+                    {iconRender(item.icon)}
+                    {item.name && <span className="toolbar-icon-tip">{item.name}</span>}
+                  </>
+                ),
+              })
             ) : (
-              // eslint-disable-next-line jsx-a11y/anchor-is-valid
-              <a
+              <DefaultAsanyTool
                 key={`${item.id}-${index}`}
-                onClick={item.onClick as any}
-                className={classnames('toolbar-icon', item.className, {
-                  disabled: item.isDisabled!(focus[item.id]),
-                  active: item.isSelected!(focus[item.id]),
-                })}
                 style={item.style}
-              >
-                {iconRender(item.icon)}
-                {item.name && <span className="toolbar-icon-tip">{item.name}</span>}
-              </a>
+                disabled={item.isDisabled!(focus[item.id])}
+                active={item.isSelected!(focus[item.id])}
+                onClick={item.onClick as any}
+                children={
+                  <>
+                    {iconRender(item.icon)}
+                    {item.name && <span className="toolbar-icon-tip">{item.name}</span>}
+                  </>
+                }
+              />
             ),
           )}
       </div>
