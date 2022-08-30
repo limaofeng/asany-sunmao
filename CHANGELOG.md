@@ -1,3 +1,12 @@
+## [1.0.26](https://github.com/limaofeng/asany-sunmao/compare/v1.0.25...v1.0.26) (2022-08-30)
+
+
+### Bug Fixes
+
+*  去除固定的高度设置 ([78a7b10](https://github.com/limaofeng/asany-sunmao/commit/78a7b107bfd9569ea5c2402719a450d6e2a58972))
+
+
+
 ## [1.0.25](https://github.com/limaofeng/asany-sunmao/compare/v1.0.24...v1.0.25) (2022-08-30)
 
 
