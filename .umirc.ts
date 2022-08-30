@@ -54,4 +54,14 @@ export default defineConfig({
     (config as any).experiments.syncWebAssembly = true;
     return config;
   },
+  extraBabelPlugins: [
+    [
+      'babel-plugin-import',
+      {
+        libraryName: 'antd',
+        libraryDirectory: 'es',
+        style: true,
+      },
+    ],
+  ],
 });

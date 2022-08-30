@@ -1,19 +1,27 @@
-import { Checkbox, Radio, Switch } from 'antd';
+import { Radio, Checkbox, Switch } from 'antd';
+import type { CheckboxProps, SwitchProps } from 'antd';
 import { component, library } from '../sunmao/decorators';
 
 import MultipleWrapper from './properties/combine/MultipleWrapper';
 import WrapperItem from './properties/combine/WrapperItem';
 import WrapperPopover from './properties/combine/WrapperPopover';
-import { Input, InputNumber, Select, TextArea } from './properties/data-entry';
+import { SingleLineText, InputNumber, Select, MultiLineText } from './properties/data-entry';
 import DsignColor from './properties/DsignColor';
+
+import React from 'react';
 
 @library({ name: 'AsanyEditor', namespace: 'cn.asany.ui.editor.properties' })
 class EditorLibrary {
   @component({})
-  Input = Input;
+  SingleLineText = SingleLineText;
 
   @component({})
-  Checkbox = Checkbox as unknown as React.Component;
+  MultiLineText = MultiLineText;
+
+  @component({})
+  Checkbox() {
+    return (props: CheckboxProps) => React.createElement(Checkbox, props);
+  }
 
   @component({})
   CheckboxGroup = Checkbox.Group;
@@ -22,16 +30,15 @@ class EditorLibrary {
   RadioGroup = Radio.Group;
 
   @component({})
-  InputNumber = InputNumber;
+  Number = InputNumber;
 
   @component({})
   Select = Select;
 
   @component({})
-  Switch = Switch as unknown as React.Component;
-
-  @component({})
-  TextArea = TextArea;
+  Switch() {
+    return (props: SwitchProps) => React.createElement(Switch, props);
+  }
 
   @component({})
   DsignColor = DsignColor as unknown as React.Component;

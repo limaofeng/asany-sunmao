@@ -39,9 +39,9 @@ export function getDefaultRenderer(
 ): ComponentPropertyRendererSetting {
   switch (item.type) {
     case 'Integer':
-      return cr(sunmao, `${library}.InputNumber`);
+      return cr(sunmao, `${library}.Number`);
     case 'String':
-      return cr(sunmao, `${library}.Input`);
+      return cr(sunmao, `${library}.SingleLineText`);
     case 'Boolean':
       const comTemp = cr(sunmao, `${library}.Checkbox`);
       return crbc(comTemp.component, { children: item.label }, comTemp.name);

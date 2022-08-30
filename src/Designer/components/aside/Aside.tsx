@@ -55,7 +55,6 @@ function Aside(_: AsideProps) {
       type: UIActionType.AsideRef,
       payload: configuration,
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const tabs = useMemo(() => {
@@ -73,7 +72,6 @@ function Aside(_: AsideProps) {
       }));
     }
     return [];
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [externalTabs, customizer]);
 
   useEffect(() => {

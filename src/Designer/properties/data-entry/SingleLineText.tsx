@@ -12,7 +12,7 @@ interface InputProps {
   onChange?: (value: string) => void;
 }
 
-function Input(props: InputProps) {
+function SingleLineText(props: InputProps) {
   const { value, placeholder = '请输入字符', onChange, width, className } = props;
   return (
     <ScrubbableControl
@@ -27,4 +27,4 @@ function Input(props: InputProps) {
   );
 }
 
-export default Input;
+export default SingleLineText;

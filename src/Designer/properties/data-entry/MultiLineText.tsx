@@ -12,7 +12,7 @@ interface TextAreaProps {
   onChange?: (value: string) => void;
 }
 
-function TextArea(props: TextAreaProps) {
+function MultiLineText(props: TextAreaProps) {
   const { value, placeholder = '请输入字符串', onChange, className, autoSize } = props;
   return (
     <ScrubbableControl
@@ -28,4 +28,4 @@ function TextArea(props: TextAreaProps) {
   );
 }
 
-export default TextArea;
+export default MultiLineText;

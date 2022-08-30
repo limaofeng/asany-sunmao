@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { Form } from 'antd';
 import isEqual from 'lodash/isEqual';
 import { ComponentPropertyRendererSetting, IField, useSunmao } from '../../../sunmao';
-import { FormLayout } from 'antd/lib/form/Form';
+import type { FormLayout } from 'antd/lib/form/Form';
 
 import { getRenderer } from '../renderers';
 import { FormItemWrapper, visibleFilter } from '../DynaActionForm';

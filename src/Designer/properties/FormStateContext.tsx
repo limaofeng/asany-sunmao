@@ -3,7 +3,9 @@ import React, { useCallback, useContext, useEffect, useReducer, useRef } from 'r
 import { EventEmitter } from 'events';
 
 import { Form } from 'antd';
-import { FormInstance, FormProps, useForm } from 'antd/lib/form/Form';
+import { FormInstance, FormProps } from 'antd';
+
+const useForm = Form.useForm;
 
 type SubscribeCallback = () => void;
 export type Selector<Selected> = (state: any) => Selected;

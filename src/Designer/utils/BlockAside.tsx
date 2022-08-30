@@ -33,7 +33,7 @@ export function createDynaActionForm(
 }
 
 const createTabPane = (item: any, namespace?: string): AsideTabPane => ({
-  title: item.name,
+  title: item.title,
   visible: item.visible,
   content: createDynaActionForm(item.customizer, namespace),
 });
