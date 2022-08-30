@@ -21,6 +21,7 @@ import './icons';
 
 import './style/tailwind.css';
 import './style/index.less';
+import styled from 'styled-components';
 
 interface AsanyProps {
   className?: string;
@@ -31,6 +32,14 @@ interface AsanyProps {
   container: React.ComponentType<any>;
   children?: React.ReactNode;
 }
+
+type EditorLayoutProps = {
+  sidebarWidth: number;
+};
+
+const EditorLayout = styled.div<EditorLayoutProps>`
+  --ae-sidebar-width: ${(props) => `${props.sidebarWidth}px`};
+`;
 
 const Editor = React.forwardRef(function Editor(
   {
@@ -63,6 +72,8 @@ const Editor = React.forwardRef(function Editor(
     [workspace],
   );
 
+  const minimizable = useEditorSelector((state) => state.ui.sidebar.minimizable);
+  const sidebarWidth = useEditorSelector((state) => state.ui.sidebar.width);
   const visible = useEditorSelector((state) => state.ui.aside.visible);
   const scenaToolbarVisible = useEditorSelector((state) => state.ui.scena.toolbar.visible);
   const loading = useEditorSelector((state) => state.ui.scena.loading);
@@ -95,10 +106,11 @@ const Editor = React.forwardRef(function Editor(
   useImperativeHandle(ref, () => api);
 
   return (
-    <div
+    <EditorLayout
       className={classnames('asany-editor sketch-container', className, {
         'asany-editor-root-loading': loading || externalLoading,
       })}
+      sidebarWidth={minimizable ? 0 : sidebarWidth}
     >
       <Toolbar {...props} />
       <div className="asany-editor-body-container">
@@ -123,7 +135,7 @@ const Editor = React.forwardRef(function Editor(
           }}
         />
       </div>
-    </div>
+    </EditorLayout>
   );
 });
 

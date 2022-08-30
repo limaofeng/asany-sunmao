@@ -20,7 +20,6 @@ function FlowEditor() {
           plugins={[plugin()]}
           onSave={handleSave}
           onBack={handleBack}
-          loading={true}
           className="flow-editor"
           project={{ type: 'flow' } as any}
         />

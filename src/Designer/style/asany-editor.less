@@ -17,6 +17,7 @@ p {
     .sidebar-resizer {
       opacity: 0;
     }
+
     .asany-editor-scena {
       opacity: 0;
     }
@@ -37,6 +38,8 @@ p {
 
       .asany-editor-scena-toolbar {
         display: flex;
+        width: calc(100% - var(--ae-sidebar-width));
+        padding-left: calc(var(--ae-sidebar-width) + 8px);
       }
     }
 
