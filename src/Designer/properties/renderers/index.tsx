@@ -1,10 +1,14 @@
 import React, { ComponentType } from 'react';
 
 import { Radio, Select } from 'antd';
-import Sunmao from 'sunmao';
-import { ComponentPropertyRenderer, ComponentPropertyRendererSetting, IField } from 'sunmao';
+import type {
+  ComponentPropertyRenderer,
+  ComponentPropertyRendererSetting,
+  IField,
+} from '../../../sunmao';
 
 import MultipleWrapper from '../combine/MultipleWrapper';
+import Sunmao from '../../../sunmao';
 
 const EmptyRenderer = () => <></>;
 
@@ -41,7 +45,7 @@ export function getDefaultRenderer(
     case 'Boolean':
       const comTemp = cr(sunmao, `${library}.Checkbox`);
       return crbc(comTemp.component, { children: item.label }, comTemp.name);
-    case 'Enum':
+    case 'Enumeration':
       const props: any = { style: { width: '100%' } };
       if (item.enumeration) {
         props.children = item.enumeration.values.map((v: any) => (
@@ -66,7 +70,7 @@ function getBasisRenderer(
   }
   if (typeof item.renderer === 'string') {
     switch (item.type) {
-      case 'Enum': // 枚举类型
+      case 'Enumeration': // 枚举类型
         const props: any = { style: { width: '100%' } };
         if (item.enumeration) {
           props.children = item.enumeration.values.map((v: any) => (

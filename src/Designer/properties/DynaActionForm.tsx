@@ -194,14 +194,12 @@ const DynaActionForm = ({
   const handleValuesChange = useCallback((_: any, allValues: any) => {
     console.log('表单更新', allValues);
     onChange && onChange(allValues);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     if (value && !isEqual(form.getFieldsValue(), value)) {
       form.setFieldsValue({ ...defaultValue.current, ...value });
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value]);
 
   return (

@@ -3,8 +3,8 @@ import classnames from 'classnames';
 import { dragPreview, ISortableItem, SortableItemProps } from '@asany/sortable';
 import Sortable from '@asany/sortable';
 import ComponentLoader from './ComponentLoader';
-import { useBlock, useReactComponent, useSketch, useBlockContext } from 'sunmao';
-import { useSelector as useSketchSelector } from '@asany/editor';
+import { useBlock, useReactComponent, useSketch, useBlockContext } from '../../../sunmao';
+import { useEditorSelector } from '../../../Designer';
 import React from 'react';
 
 const ContentItemRender = memo(
@@ -24,7 +24,7 @@ const ContentItemRender = memo(
 );
 
 const ContentItemPreview = React.forwardRef(function ContentItemPreview({ data, style }: any) {
-  const id = useSketchSelector((state) => state.project.data.id);
+  const id = useEditorSelector((state) => state.project.data.id);
   const sketch = useSketch();
   const blocks = sketch.getComponentData(id);
 
@@ -88,7 +88,7 @@ function Content() {
   }, []);
 
   const zoom = useRef(1);
-  const _zoom = useSketchSelector((state) => state.ui.scena.zoom);
+  const _zoom = useEditorSelector((state) => state.ui.scena.zoom);
   zoom.current = _zoom;
 
   return (

@@ -1,6 +1,6 @@
 import { Checkbox, Radio, Switch } from 'antd';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { component, library } from '../sunmao';
+import { component, library } from '../sunmao/decorators';
 
 import MultipleWrapper from './properties/combine/MultipleWrapper';
 import WrapperItem from './properties/combine/WrapperItem';
@@ -47,6 +47,4 @@ class EditorLibrary {
   DefaultMultipleWrapperItem = WrapperItem;
 }
 
-const editor: any = new EditorLibrary();
-
-export default [editor];
+export const editorLibrary: any = new EditorLibrary();

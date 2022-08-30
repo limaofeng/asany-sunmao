@@ -1,7 +1,7 @@
 import React, { useContext, useRef } from 'react';
 
 import { OverlayScrollbarsComponent } from 'overlayscrollbars-react';
-import { ICustomizer, IFieldGroup } from 'sunmao';
+import { ICustomizer, IFieldGroup } from '../../sunmao';
 
 import CurrentElementInformation from '../properties/CurrentElementInformation';
 import DynaActionForm from '../properties/DynaActionForm';
@@ -74,7 +74,7 @@ export function buildAside(customizer: ICustomizer, namespace?: string) {
   const customTabs = customizer.tabs || [];
   if (!customTabs.length) {
     customTabs.push({
-      name: '组件设置',
+      title: customizer.title || '设置',
       groups: groups,
     });
   } else {
@@ -91,7 +91,7 @@ export function buildAside(customizer: ICustomizer, namespace?: string) {
       const groupIds = groups.map(({ id }) => id);
       return {
         ...item,
-        title: item.name,
+        title: item.title,
         customizer: {
           groups,
           fields: fields.filter((field) => groupIds.includes(field.group! as string)),

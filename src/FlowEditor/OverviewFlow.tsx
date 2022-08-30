@@ -8,6 +8,7 @@ import ReactFlow, {
   useEdgesState,
   useNodesState,
 } from 'react-flow-renderer';
+import { useEditor } from '../Designer';
 
 import { edges as initialEdges, nodes as initialNodes } from './initial-elements';
 
@@ -19,6 +20,8 @@ type OverviewFlowProps = {
 };
 
 const OverviewFlow = (props: OverviewFlowProps) => {
+  const editor = useEditor();
+
   const reactFlowWrapper = useRef<HTMLDivElement>(null);
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes as any);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
@@ -89,6 +92,28 @@ const OverviewFlow = (props: OverviewFlowProps) => {
         onEdgesChange={onEdgesChange}
         onConnect={onConnect}
         onInit={setReactFlowInstance}
+        onNodeClick={() => {
+          editor.aside.open({
+            customizer: {
+              title: '节点设置',
+              fields: [
+                {
+                  label: '名称',
+                  name: 'label',
+                  type: 'String',
+                },
+              ],
+            },
+            value: { label: '1111' },
+            update: () => {},
+            // watchValue: (callback: (value: any) => void) => {
+            //   const handleChange = () => {
+            //     callback(store.getBlock(block.key)?.props);
+            //   };
+            //   return store.subscribe(handleChange);
+            // },
+          });
+        }}
         onDrop={onDrop}
         onDragOver={onDragOver}
         fitView

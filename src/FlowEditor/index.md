@@ -8,7 +8,7 @@ nav:
 
 ```jsx
 import React, { useEffect } from 'react';
-import { FlowEditor } from '@asany/sunmao';
+import { Sunmao, FlowEditor, SunmaoProvider, editorLibrary } from '@asany/sunmao';
 
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
@@ -16,6 +16,12 @@ import { HTML5Backend } from 'react-dnd-html5-backend';
 function FlowEditorDemo() {
   useEffect(() => {
     document.body.style.overflow = 'hidden';
+  }, []);
+
+  const sunmao = new Sunmao();
+
+  useEffect(() => {
+    sunmao.addLibrary(editorLibrary);
   }, []);
 
   return (
@@ -31,9 +37,11 @@ function FlowEditorDemo() {
         background: '#fff',
       }}
     >
-      <DndProvider backend={HTML5Backend}>
-        <FlowEditor />
-      </DndProvider>
+      <SunmaoProvider sunmao={sunmao}>
+        <DndProvider backend={HTML5Backend}>
+          <FlowEditor />
+        </DndProvider>
+      </SunmaoProvider>
     </div>
   );
 }

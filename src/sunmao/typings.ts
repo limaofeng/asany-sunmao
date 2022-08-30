@@ -43,7 +43,9 @@ export type IFieldType =
   | 'DateTime'
   | 'JSON'
   | 'Asset'
-  | 'Enum';
+  | 'Color'
+  | 'Location'
+  | 'Enumeration';
 
 export type SubscribeCallback = () => void;
 
@@ -342,13 +344,19 @@ export interface IFieldGroup {
 }
 
 export interface ITabPane {
-  name: string;
+  title: string;
   visible?: boolean | VisibleFunc;
   groups: string[] | IFieldGroup[];
   customizer?: ICustomizer;
 }
 
 export interface ICustomizer {
+  /**
+   * 自定义属性面板标题 <br/>
+   * 默认为: 设置
+   * 设置 tabs 后, 该设置无效
+   */
+  title?: string;
   /**
    * ？还未想好怎么表述
    */

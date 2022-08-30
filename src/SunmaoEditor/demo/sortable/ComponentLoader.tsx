@@ -1,6 +1,6 @@
 import type { ComponentType, CSSProperties } from 'react';
 import React from 'react';
-import { useComponent } from 'sunmao';
+import { useComponent } from '../../../sunmao';
 
 type ComponentLoaderProps = {
   id?: string;

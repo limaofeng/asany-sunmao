@@ -1,7 +1,7 @@
 import React, { useCallback, useRef } from 'react';
 
 import { useClickAway } from 'react-use';
-import type { SelectPopoverProps } from '@asany/editor/dist/typings';
+import type { SelectPopoverProps } from '../../../../Designer';
 
 import LibraryPanel from './LibraryPanel';
 
