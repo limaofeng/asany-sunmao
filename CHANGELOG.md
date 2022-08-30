@@ -1,3 +1,12 @@
+## [1.0.24](https://github.com/limaofeng/asany-sunmao/compare/v1.0.23...v1.0.24) (2022-08-30)
+
+
+### Features
+
+* 优化默认组件 ([7a23b66](https://github.com/limaofeng/asany-sunmao/commit/7a23b66367fcd5a8c23367c07b1776dcd39d4833))
+
+
+
 ## [1.0.23](https://github.com/limaofeng/asany-sunmao/compare/v1.0.22...v1.0.23) (2022-08-30)
 
 
