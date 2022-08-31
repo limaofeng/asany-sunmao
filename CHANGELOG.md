@@ -1,3 +1,12 @@
+## [1.0.28](https://github.com/limaofeng/asany-sunmao/compare/v1.0.27...v1.0.28) (2022-08-31)
+
+
+### Bug Fixes
+
+* container 改为 ComponentType ([40d1cce](https://github.com/limaofeng/asany-sunmao/commit/40d1cce3a5d86cf6f0f0721c23e4684ade35dc7d))
+
+
+
 ## [1.0.27](https://github.com/limaofeng/asany-sunmao/compare/v1.0.26...v1.0.27) (2022-08-31)
 
 
