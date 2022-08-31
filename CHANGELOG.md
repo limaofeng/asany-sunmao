@@ -1,3 +1,12 @@
+## [1.0.30](https://github.com/limaofeng/asany-sunmao/compare/v1.0.29...v1.0.30) (2022-08-31)
+
+
+### Bug Fixes
+
+* loading 不会消失的问题 ([9162923](https://github.com/limaofeng/asany-sunmao/commit/91629237acf3fc68adc8bd05a454e534920ac175))
+
+
+
 ## [1.0.29](https://github.com/limaofeng/asany-sunmao/compare/v1.0.28...v1.0.29) (2022-08-31)
 
 
