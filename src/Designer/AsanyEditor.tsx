@@ -29,7 +29,7 @@ interface AsanyProps {
   onBack?: () => void;
   loading?: boolean;
   loadingComponent?: React.ComponentType<LoadingComponentProps>;
-  container: React.ComponentType<any>;
+  container: React.ReactElement;
   children?: React.ReactNode;
 }
 
@@ -75,7 +75,6 @@ const Editor = React.forwardRef(function Editor(
   const minimizable = useEditorSelector((state) => state.ui.sidebar.minimizable);
   const sidebarWidth = useEditorSelector((state) => state.ui.sidebar.width);
   const visible = useEditorSelector((state) => state.ui.aside.visible);
-  const scenaToolbarVisible = useEditorSelector((state) => state.ui.scena.toolbar.visible);
   const loading = useEditorSelector((state) => state.ui.scena.loading);
   const control = useEditorSelector((state) => state.ui.aside.control);
 
@@ -105,7 +104,9 @@ const Editor = React.forwardRef(function Editor(
 
   useImperativeHandle(ref, () => api);
 
-  return (
+  return React.cloneElement(
+    container,
+    {},
     <EditorLayout
       className={classnames('asany-editor sketch-container', className, {
         'asany-editor-root-loading': loading || externalLoading,
@@ -132,7 +133,7 @@ const Editor = React.forwardRef(function Editor(
           }}
         />
       </div>
-    </EditorLayout>
+    </EditorLayout>,
   );
 });
 
@@ -142,7 +143,7 @@ interface AsanyWarpperProps {
   loadingComponent?: React.ComponentType<LoadingComponentProps>;
   project: AsanyProject;
   wrapper?: ComponentType<any>;
-  container?: ComponentType<any>;
+  container?: React.ReactElement;
   plugins?: EditorPlugin[];
   onSave?: (data: AsanyProject) => void;
   onBack?: () => void;
@@ -155,7 +156,7 @@ function AsanyEditor(props: AsanyWarpperProps, ref?: React.ForwardedRef<IAsanyEd
     project,
     onSave,
     onBack,
-    container = RuntimeContainer,
+    container = <RuntimeContainer />,
     plugins = [],
     loading,
     loadingComponent,

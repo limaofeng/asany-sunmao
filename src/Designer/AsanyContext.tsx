@@ -118,7 +118,6 @@ export const AsanyProvider = (props: AsanyProviderProps) => {
   const { dispatch } = store;
   useEffect(() => {
     dispatch({ type: ActionType.Init });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   useEffect(() => {
     if (!value) {
@@ -130,7 +129,6 @@ export const AsanyProvider = (props: AsanyProviderProps) => {
       type: ActionType.ChangeStateByPlugin,
       payload: { reducers, project: value },
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value]);
   return useMemo(
     () => (
@@ -138,7 +136,6 @@ export const AsanyProvider = (props: AsanyProviderProps) => {
         {store.getState().isReady && children}
       </AsanyContext.Provider>
     ),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     [version, store.getState().isReady],
   );
 };
