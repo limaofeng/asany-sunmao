@@ -1,6 +1,6 @@
 {
   "name": "@asany/sunmao",
-  "version": "1.0.26",
+  "version": "1.0.27",
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",

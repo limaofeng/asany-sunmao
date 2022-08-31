@@ -1,3 +1,12 @@
+## [1.0.27](https://github.com/limaofeng/asany-sunmao/compare/v1.0.26...v1.0.27) (2022-08-31)
+
+
+### Bug Fixes
+
+* 支持扩展 container 可以在 container 中使用 Editor 的状态 ([9d8b51b](https://github.com/limaofeng/asany-sunmao/commit/9d8b51b243f81473042d9f25a54bb4e7742f0cf4))
+
+
+
 ## [1.0.26](https://github.com/limaofeng/asany-sunmao/compare/v1.0.25...v1.0.26) (2022-08-30)
 
 
