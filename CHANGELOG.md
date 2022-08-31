@@ -1,3 +1,12 @@
+## [1.0.31](https://github.com/limaofeng/asany-sunmao/compare/v1.0.30...v1.0.31) (2022-08-31)
+
+
+### Bug Fixes
+
+* 当存在侧边栏时，默认直接显示 ([e99ec38](https://github.com/limaofeng/asany-sunmao/commit/e99ec38d0046e95535fdb052471bfd30dcb99539))
+
+
+
 ## [1.0.30](https://github.com/limaofeng/asany-sunmao/compare/v1.0.29...v1.0.30) (2022-08-31)
 
 
