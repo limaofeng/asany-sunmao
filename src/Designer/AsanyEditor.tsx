@@ -29,7 +29,6 @@ interface AsanyProps {
   onBack?: () => void;
   loading?: boolean;
   loadingComponent?: React.ComponentType<LoadingComponentProps>;
-  container: React.ReactElement;
   children?: React.ReactNode;
 }
 
@@ -45,7 +44,6 @@ const Editor = React.forwardRef(function Editor(
   {
     className,
     onSave,
-    container,
     loading: externalLoading,
     loadingComponent: LoadingComponent = DefaultLoadingComponent,
     children,
@@ -104,9 +102,7 @@ const Editor = React.forwardRef(function Editor(
 
   useImperativeHandle(ref, () => api);
 
-  return React.cloneElement(
-    container,
-    {},
+  return (
     <EditorLayout
       className={classnames('asany-editor sketch-container', className, {
         'asany-editor-root-loading': loading || externalLoading,
@@ -133,7 +129,7 @@ const Editor = React.forwardRef(function Editor(
           }}
         />
       </div>
-    </EditorLayout>,
+    </EditorLayout>
   );
 });
 
@@ -143,7 +139,7 @@ interface AsanyWarpperProps {
   loadingComponent?: React.ComponentType<LoadingComponentProps>;
   project: AsanyProject;
   wrapper?: ComponentType<any>;
-  container?: React.ReactElement;
+  container?: React.ComponentType;
   plugins?: EditorPlugin[];
   onSave?: (data: AsanyProject) => void;
   onBack?: () => void;
@@ -156,7 +152,7 @@ function AsanyEditor(props: AsanyWarpperProps, ref?: React.ForwardedRef<IAsanyEd
     project,
     onSave,
     onBack,
-    container = <RuntimeContainer />,
+    container: Container = RuntimeContainer,
     plugins = [],
     loading,
     loadingComponent,
@@ -172,17 +168,18 @@ function AsanyEditor(props: AsanyWarpperProps, ref?: React.ForwardedRef<IAsanyEd
 
   return (
     <AsanyProvider version={version} plugins={[...plugins]} value={project}>
-      <Editor
-        ref={ref}
-        className={className}
-        onSave={onSave}
-        loading={loading}
-        loadingComponent={loadingComponent}
-        container={container}
-        onBack={onBack}
-      >
-        {children}
-      </Editor>
+      <Container>
+        <Editor
+          ref={ref}
+          className={className}
+          onSave={onSave}
+          loading={loading}
+          loadingComponent={loadingComponent}
+          onBack={onBack}
+        >
+          {children}
+        </Editor>
+      </Container>
     </AsanyProvider>
   );
 }
