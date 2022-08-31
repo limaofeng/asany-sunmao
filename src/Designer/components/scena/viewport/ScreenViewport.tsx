@@ -154,9 +154,6 @@ interface ScreenViewportProps {
 function ScreenViewport(props: ScreenViewportProps) {
   const { children, scrollX = 0, scrollY = 0, width, height } = props;
 
-  // const sidebarWidth = useEditorSelector((state) => state.ui.sidebar.width);
-  const sidebarMinWidth = useEditorSelector((state) => state.ui.sidebar.minWidth);
-  const sidebarMinimizable = useEditorSelector((state) => state.ui.sidebar.minimizable);
   const screenId = useEditorSelector((state) => state.ui.scena.screen.id);
 
   const style = useMemo(() => {
@@ -167,28 +164,11 @@ function ScreenViewport(props: ScreenViewportProps) {
         transform: `matrix(1, 0, 0, 1, ${scrollX}, ${scrollY})`,
       };
     }
-    // let _sidebarWidth = sidebarWidth;
-    // if (sidebarMinimizable) {
-    //   _sidebarWidth = 0;
-    // } else {
-    //   _sidebarWidth = Math.max(sidebarMinWidth, _sidebarWidth);
-    // }
     return {
-      // marginLeft: _sidebarWidth,
       display: 'flex',
-      // width: `calc(100% - ${_sidebarWidth}px)`,
       minHeight: `100%`,
     };
-  }, [
-    screenId,
-    width,
-    height,
-    scrollX,
-    scrollY,
-    // sidebarWidth,
-    sidebarMinimizable,
-    sidebarMinWidth,
-  ]);
+  }, [screenId, width, height, scrollX, scrollY]);
 
   return (
     <div className="screen-viewport" style={style}>

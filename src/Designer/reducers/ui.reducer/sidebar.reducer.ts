@@ -79,6 +79,8 @@ export default function reducer(
   if (action.type === UISidebarActionType.SetSidebar) {
     const content = action.payload.content;
     const width = content ? action.payload.width || state.width : 0;
+    const visible =
+      typeof action.payload.visible == 'boolean' ? !!action.payload.visible : !!content;
     const minimizable = !!action.payload.minimizable;
     const minWidth = action.payload.minWidth || state.minWidth;
     return {
@@ -86,9 +88,9 @@ export default function reducer(
       minWidth: minimizable ? 3 : minWidth,
       width: minimizable ? 3 : width,
       content,
-      minimizable: !action.payload.visible || minimizable,
+      minimizable: !visible || minimizable,
       tools: action.payload.tools,
-      visible: action.payload.visible !== false,
+      visible,
     };
   }
   if (action.type === GlobalAsanyAction.Init) {

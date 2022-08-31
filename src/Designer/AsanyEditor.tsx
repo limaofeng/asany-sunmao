@@ -71,6 +71,7 @@ const Editor = React.forwardRef(function Editor(
   );
 
   const minimizable = useEditorSelector((state) => state.ui.sidebar.minimizable);
+  const sidebarMinWidth = useEditorSelector((state) => state.ui.sidebar.minWidth);
   const sidebarWidth = useEditorSelector((state) => state.ui.sidebar.width);
   const visible = useEditorSelector((state) => state.ui.aside.visible);
   const loading = useEditorSelector((state) => state.ui.scena.loading);
@@ -107,7 +108,7 @@ const Editor = React.forwardRef(function Editor(
       className={classnames('asany-editor sketch-container', className, {
         'asany-editor-root-loading': loading || externalLoading,
       })}
-      sidebarWidth={minimizable ? 0 : sidebarWidth}
+      sidebarWidth={minimizable ? 0 : Math.max(sidebarMinWidth, sidebarWidth)}
     >
       <Toolbar {...props} />
       <div className="asany-editor-body-container">
