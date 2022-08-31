@@ -79,12 +79,12 @@ function Scena(props: ScenaProps) {
 
   const changeHandToGrab = useCallback(() => {
     setCursorStyle('grab');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [setCursorStyle]);
+
   const changeHandToGrabbing = useCallback(() => {
     setCursorStyle('grabbing');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [setCursorStyle]);
+
   const handleClick = useCallback(
     (e: any) => {
       if (e.target.classList.contains('moveable-control')) {
@@ -94,10 +94,7 @@ function Scena(props: ScenaProps) {
       if (disabled) {
         return;
       }
-      // TODO: 取消 Block 的选中效果
-      console.warn('取消 Block 的选中效果');
     },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     [disabled, onClick],
   );
   const handleScroll = (x: number, y: number) => {
