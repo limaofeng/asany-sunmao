@@ -1,4 +1,4 @@
-import { useImperativeHandle, useState } from 'react';
+import { useImperativeHandle, useLayoutEffect, useState } from 'react';
 import React, { ComponentType, useCallback, useEffect, useReducer } from 'react';
 
 import { isElement, isValidElementType } from 'react-is';
@@ -165,6 +165,10 @@ function AsanyEditor(props: AsanyWarpperProps, ref?: React.ForwardedRef<IAsanyEd
     }
     forceRender();
   }, [project]);
+
+  useLayoutEffect(() => {
+    forceRender();
+  }, [loading]);
 
   return (
     <AsanyProvider version={version} plugins={[...plugins]} value={project}>
