@@ -120,6 +120,7 @@ export default (): EditorPlugin => ({
           mutex: 'icons-actions',
           useSelector: (state) => state.workspace,
           isSelected: (move) => move,
+          isDisabled: () => true,
           onClick: (editor) => {
             return editor.sidebar.select('move');
           },
