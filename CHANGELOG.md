@@ -1,3 +1,12 @@
+## [1.0.34](https://github.com/limaofeng/asany-sunmao/compare/v1.0.33...v1.0.34) (2022-09-05)
+
+
+### Bug Fixes
+
+* 解决 Resizer 组件 handle 的 className 不生效的问题 ([23b8f95](https://github.com/limaofeng/asany-sunmao/commit/23b8f952e92a28cfdfe13d8b082abf7b422d47e3))
+
+
+
 ## [1.0.33](https://github.com/limaofeng/asany-sunmao/compare/v1.0.32...v1.0.33) (2022-09-05)
 
 
