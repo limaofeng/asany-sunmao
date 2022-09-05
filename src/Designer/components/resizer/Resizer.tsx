@@ -97,7 +97,7 @@ function Resizer(props: ResizerProps) {
       style={style}
     >
       {React.cloneElement(handle, {
-        className: handleClassName,
+        className: classnames(handle?.props?.className, handleClassName),
         onMouseDown: handleMouseDown,
       })}
       {children}
