@@ -4,6 +4,15 @@ import classnames from 'classnames';
 
 type ResizeFunc = (e: React.MouseEvent) => void;
 
+type DefaultHandleProps = {
+  className?: string;
+  onMouseDown?: (e: React.MouseEvent) => void;
+};
+
+function DefaultHandle({ className, onMouseDown }: DefaultHandleProps) {
+  return <div className={classnames('handle', className)} onMouseDown={onMouseDown}></div>;
+}
+
 export type ResizerProps = {
   className?: string;
   handleClassName?: string;
@@ -11,6 +20,7 @@ export type ResizerProps = {
   onResizeStart?: ResizeFunc;
   onResize: (diff: number) => void;
   onResizeEnd?: ResizeFunc;
+  handle?: React.ReactElement<DefaultHandleProps>;
   children: React.ReactNode;
   style?: CSSProperties;
 };
@@ -79,7 +89,10 @@ function Resizer(props: ResizerProps) {
       })}
       style={style}
     >
-      <div className={classnames('handle', handleClassName)} onMouseDown={handleMouseDown}></div>
+      {React.cloneElement(props.handle || <DefaultHandle />, {
+        className: handleClassName,
+        onMouseDown: handleMouseDown,
+      })}
       {children}
     </div>
   );
