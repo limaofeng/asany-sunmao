@@ -26,7 +26,14 @@ export type ResizerProps = {
 };
 
 function Resizer(props: ResizerProps) {
-  const { className, handleClassName, direction = 'x', children, style } = props;
+  const {
+    className,
+    handleClassName,
+    direction = 'x',
+    handle = <DefaultHandle />,
+    children,
+    style,
+  } = props;
   const { onResizeStart, onResize, onResizeEnd } = props;
 
   const [active, setActive] = useState(false);
@@ -89,7 +96,7 @@ function Resizer(props: ResizerProps) {
       })}
       style={style}
     >
-      {React.cloneElement(props.handle || <DefaultHandle />, {
+      {React.cloneElement(handle, {
         className: handleClassName,
         onMouseDown: handleMouseDown,
       })}
