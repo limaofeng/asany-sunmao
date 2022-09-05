@@ -1,3 +1,12 @@
+## [1.0.32](https://github.com/limaofeng/asany-sunmao/compare/v1.0.31...v1.0.32) (2022-09-05)
+
+
+### Features
+
+* 支持自定义 Resizer 组件的 handle ([485354c](https://github.com/limaofeng/asany-sunmao/commit/485354cb00f72d124a1434c56af21ad12a9f9ccf))
+
+
+
 ## [1.0.31](https://github.com/limaofeng/asany-sunmao/compare/v1.0.30...v1.0.31) (2022-08-31)
 
 
