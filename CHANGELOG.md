@@ -1,3 +1,12 @@
+## [1.0.33](https://github.com/limaofeng/asany-sunmao/compare/v1.0.32...v1.0.33) (2022-09-05)
+
+
+### Bug Fixes
+
+* 解决 Resizer 组件 handle 自定义问题 ([11443ed](https://github.com/limaofeng/asany-sunmao/commit/11443ed01e4f775eb94bb19e84b28b4830d311bb))
+
+
+
 ## [1.0.32](https://github.com/limaofeng/asany-sunmao/compare/v1.0.31...v1.0.32) (2022-09-05)
 
 
