@@ -1,3 +1,12 @@
+## [1.0.35](https://github.com/limaofeng/asany-sunmao/compare/v1.0.34...v1.0.35) (2022-09-14)
+
+
+### Bug Fixes
+
+* 使用问题，去掉默认的组件 ([90b536d](https://github.com/limaofeng/asany-sunmao/commit/90b536d69c8f91c438b7231f4528ddbf68358db8))
+
+
+
 ## [1.0.34](https://github.com/limaofeng/asany-sunmao/compare/v1.0.33...v1.0.34) (2022-09-05)
 
 
