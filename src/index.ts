@@ -1,4 +1,4 @@
-export { default as Foo } from './Components/Foo';
+// export { default as Foo } from './Components/Foo';
 export { default as Sunmao } from './sunmao';
 export * from './sunmao';
 export { default as Designer } from './Designer';
