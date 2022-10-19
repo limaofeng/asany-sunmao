@@ -47,7 +47,7 @@ const BlockProvider = React.forwardRef(function BlockProvider(props: BlockProvid
 
         return React.cloneElement(as, {
           ..._props,
-          className: classnames(as.props.className, _props.className),
+          className: classnames((as as any).props.className, _props.className),
           ref: multiRef,
         });
       });
