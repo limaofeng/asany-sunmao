@@ -1,3 +1,12 @@
+## [1.0.36](https://github.com/limaofeng/asany-sunmao/compare/v1.0.35...v1.0.36) (2022-10-19)
+
+
+### Bug Fixes
+
+* 解决Block初始化更新，监听不会触发的问题 ([433663b](https://github.com/limaofeng/asany-sunmao/commit/433663b43eb6170907b135f02d16c9164d06fe92))
+
+
+
 ## [1.0.35](https://github.com/limaofeng/asany-sunmao/compare/v1.0.34...v1.0.35) (2022-09-14)
 
 
