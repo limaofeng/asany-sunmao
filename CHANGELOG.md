@@ -1,3 +1,12 @@
+## [1.0.37](https://github.com/limaofeng/asany-sunmao/compare/v1.0.36...v1.0.37) (2024-03-06)
+
+
+### Features
+
+* 依赖调整 ([1a878f9](https://github.com/limaofeng/asany-sunmao/commit/1a878f92e1477d89b6f73081f222e2f7903dc795))
+
+
+
 ## [1.0.36](https://github.com/limaofeng/asany-sunmao/compare/v1.0.35...v1.0.36) (2022-10-19)
 
 
