@@ -1,3 +1,12 @@
+## [1.0.38](https://github.com/limaofeng/asany-sunmao/compare/v1.0.37...v1.0.38) (2024-03-06)
+
+
+### Features
+
+* 构建优化 ([96234d5](https://github.com/limaofeng/asany-sunmao/commit/96234d5041e646de2a7dd02e2f45670fc378ce23))
+
+
+
 ## [1.0.37](https://github.com/limaofeng/asany-sunmao/compare/v1.0.36...v1.0.37) (2024-03-06)
 
 
