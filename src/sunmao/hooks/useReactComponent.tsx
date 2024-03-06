@@ -25,9 +25,17 @@ type ExternalProps = {
   [key: string]: any;
 };
 
-function createReactComponentComponent (
-{ id, state, emitter, dev }: { id: string | undefined; state: React.RefObject<UseReactComponentState>; emitter: EventEmitter; dev: boolean; },
-): React.ComponentType<any> {
+function createReactComponentComponent({
+  id,
+  state,
+  emitter,
+  dev,
+}: {
+  id: string | undefined;
+  state: React.RefObject<UseReactComponentState>;
+  emitter: EventEmitter;
+  dev: boolean;
+}): React.ComponentType<any> {
   return React.forwardRef<any, any>(function (externalProps: ExternalProps, ref: any) {
     const { children, ...passthroughProps } = externalProps;
     const [version, forceRender] = useReducer((s) => s + 1, 0);

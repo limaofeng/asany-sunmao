@@ -76,10 +76,7 @@ export function useInternalSelector<Selected>(
     if (!store) {
       return;
     }
-    const unsubscribe = store.subscribe(checkForUpdates);
-    // 添加到监听后，立即执行一次
-    checkForUpdates();
-    return unsubscribe;
+    return store.subscribe(checkForUpdates);
   }, [checkForUpdates, store]);
   return selectedState;
 }

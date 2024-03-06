@@ -6,11 +6,10 @@ p {
 }
 
 .asany-editor {
-
   .sidebar-resizer,
   .asany-editor-scena {
     opacity: 1;
-    transition: opacity .5s;
+    transition: opacity 0.5s;
   }
 
   &.asany-editor-root-loading {
@@ -25,7 +24,6 @@ p {
 
   &-scena {
     &.mini-toolbar {
-
       .box,
       .ruler.horizontal,
       .ruler.vertical {
@@ -109,7 +107,6 @@ p {
             }
           }
         }
-
       }
 
       .vertical-divider {
@@ -123,7 +120,7 @@ p {
   }
 
   &-sidebar {
-    &.collapsed>.sidebar-resizer>.handle {
+    &.collapsed > .sidebar-resizer > .handle {
       z-index: 15;
     }
 
@@ -151,12 +148,12 @@ p {
 
       &.minimizable {
         &.direction-x {
-          >.handle {
+          > .handle {
             right: -5px;
           }
         }
 
-        >.tool-panel-content {
+        > .tool-panel-content {
           opacity: 0;
         }
       }
@@ -246,7 +243,7 @@ p {
     -moz-osx-font-smoothing: grayscale;
   }
 
-  .svg-icon>* {
+  .svg-icon > * {
     line-height: 1;
   }
 

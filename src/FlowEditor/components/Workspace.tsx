@@ -137,7 +137,7 @@ function Workspace() {
         marginLeft,
       }}
     >
-      <OverviewFlow onClick={() => {}}/>
+      <OverviewFlow onClick={() => {}} />
     </div>
   );
 }

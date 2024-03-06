@@ -19,9 +19,9 @@ export default function reducer(
   if (action.type === IFeatureActionType.SetFeatures) {
     return Object.keys(defaultState).reduce(
       function (state: any, key) {
-      state[key] = !!action.payload.includes(key);
-      return state as any;
-    },
+        state[key] = !!action.payload.includes(key);
+        return state as any;
+      },
       { ...state } as any,
     );
   }

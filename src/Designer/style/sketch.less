@@ -41,13 +41,13 @@
 .asany-editor-loading {
   position: absolute;
   top: 0;
+  right: 0;
+  bottom: 0;
   left: 52px;
   z-index: 5;
   display: none;
   align-items: center;
   justify-content: center;
-  right: 0;
-  bottom: 0;
   background-color: #fff;
 
   &-enter,
@@ -107,7 +107,7 @@
       background: rgb(242, 242, 242);
     }
 
-    &>div {
+    & > div {
       padding-bottom: 0;
     }
 
@@ -119,7 +119,7 @@
       height: 100%;
       padding-right: 10px;
 
-      &>.back-icon {
+      & > .back-icon {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -132,7 +132,7 @@
         transition: all 0.1s linear 0s;
       }
 
-      &>.title {
+      & > .title {
         display: inline;
         max-width: initial !important;
         overflow: hidden;
@@ -201,7 +201,7 @@
       height: 100%;
       padding: 0 27px;
 
-      &>.toolbar-icon {
+      & > .toolbar-icon {
         margin-right: 8px;
       }
     }
@@ -281,7 +281,7 @@
             border-bottom: 0 !important;
           }
 
-          >.svg-icon {
+          > .svg-icon {
             font-size: 16px;
           }
 
@@ -400,7 +400,7 @@
             }
 
             .ant-tree-node-content-wrapper {
-              >span {
+              > span {
                 display: inline-block;
                 height: 32px;
                 line-height: 32px;
@@ -408,7 +408,7 @@
             }
 
             &.drag-over-gap-top {
-              &>[draggable] {
+              & > [draggable] {
                 border-top-width: 3px;
                 border-right-color: #b1d7fa !important;
                 border-bottom-color: #b1d7fa !important;
@@ -418,7 +418,7 @@
             }
 
             &.drag-over-gap-bottom {
-              &>[draggable] {
+              & > [draggable] {
                 border-top-color: #b1d7fa !important;
                 border-top-width: 1px;
                 border-right-color: #b1d7fa !important;
@@ -449,8 +449,8 @@
     &.falling {
       .sidebar-resizer.resizer.direction-x {
         top: 0px;
-        height: calc(100vh - var(--editor-navigation-height));
         z-index: 5;
+        height: calc(100vh - var(--editor-navigation-height));
       }
     }
   }
@@ -674,7 +674,7 @@
                 padding-left: 0 !important;
               }
 
-              &> :first-child {
+              & > :first-child {
                 flex: 1;
               }
 
@@ -707,12 +707,12 @@
               }
             }
 
-            >.sortable-flipper li {
+            > .sortable-flipper li {
               display: flex;
               background-color: #fff;
             }
 
-            >li {
+            > li {
               display: flex;
               height: 28px;
 
@@ -751,7 +751,7 @@
         padding: 10px;
         border-top: 1px solid var(--gray-darkest);
 
-        >div {
+        > div {
           user-select: none;
         }
       }
@@ -960,7 +960,7 @@
   .ant-popover-inner-content {
     padding: 6px 8px;
 
-    >div {
+    > div {
       width: 150px;
       height: 200px;
     }

@@ -20,7 +20,7 @@ const ContentItemRender = memo(
         />
       </div>
     );
-  })
+  }),
 );
 
 const ContentItemPreview = React.forwardRef(function ContentItemPreview({ data, style }: any) {
@@ -77,7 +77,7 @@ function Content() {
   const setItems = useCallback((value: any) => {
     update(
       'items',
-      value.map(({ id, name, component }: any) => ({ id, name, component }))
+      value.map(({ id, name, component }: any) => ({ id, name, component })),
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
