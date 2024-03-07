@@ -1,3 +1,12 @@
+## [1.0.40](https://github.com/limaofeng/asany-sunmao/compare/v1.0.39...v1.0.40) (2024-03-07)
+
+
+### Features
+
+* refactor asany-editor.less file ([563edf3](https://github.com/limaofeng/asany-sunmao/commit/563edf3ba15029e7169ed4d38591db2475171e58))
+
+
+
 ## [1.0.39](https://github.com/limaofeng/asany-sunmao/compare/v1.0.38...v1.0.39) (2024-03-07)
 
 
