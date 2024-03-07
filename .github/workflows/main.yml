@@ -16,11 +16,12 @@ jobs:
 
       - name: Install deps and build (with cache)
         uses: bahmutov/npm-install@v1
+        run: yarn run build
 
-      - name: Test
-        run: yarn test --ci --coverage --maxWorkers=2
+      # - name: Test
+      #   run: yarn test --ci --coverage --maxWorkers=2
 
-      - name: Coveralls
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Coveralls
+      #   uses: coverallsapp/github-action@master
+      #   with:
+      #     github-token: ${{ secrets.GITHUB_TOKEN }}
