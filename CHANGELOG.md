@@ -1,3 +1,13 @@
+## [1.0.39](https://github.com/limaofeng/asany-sunmao/compare/v1.0.38...v1.0.39) (2024-03-07)
+
+
+### Features
+
+* add build step to workflow ([6ad8887](https://github.com/limaofeng/asany-sunmao/commit/6ad8887aa97a8b3f24cd2210629df7baa72bc151))
+* update dependencies and build process ([75d89a3](https://github.com/limaofeng/asany-sunmao/commit/75d89a300fabb1f9e6b95e721e2e52dc13948687))
+
+
+
 ## [1.0.38](https://github.com/limaofeng/asany-sunmao/compare/v1.0.37...v1.0.38) (2024-03-06)
 
 
