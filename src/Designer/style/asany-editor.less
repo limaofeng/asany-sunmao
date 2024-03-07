@@ -1,11 +1,14 @@
-ul,
-h1,
-p {
-  margin: 0;
-  padding: 0;
+.asany-editor {
+  ul,
+  h1,
+  p {
+    margin: 0;
+    padding: 0;
+  }
 }
 
 .asany-editor {
+
   .sidebar-resizer,
   .asany-editor-scena {
     opacity: 1;
@@ -24,6 +27,7 @@ p {
 
   &-scena {
     &.mini-toolbar {
+
       .box,
       .ruler.horizontal,
       .ruler.vertical {
@@ -120,7 +124,7 @@ p {
   }
 
   &-sidebar {
-    &.collapsed > .sidebar-resizer > .handle {
+    &.collapsed>.sidebar-resizer>.handle {
       z-index: 15;
     }
 
@@ -148,12 +152,12 @@ p {
 
       &.minimizable {
         &.direction-x {
-          > .handle {
+          >.handle {
             right: -5px;
           }
         }
 
-        > .tool-panel-content {
+        >.tool-panel-content {
           opacity: 0;
         }
       }
@@ -243,7 +247,7 @@ p {
     -moz-osx-font-smoothing: grayscale;
   }
 
-  .svg-icon > * {
+  .svg-icon>* {
     line-height: 1;
   }
 
