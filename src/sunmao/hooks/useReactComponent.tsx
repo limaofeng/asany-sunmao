@@ -35,8 +35,10 @@ function createReactComponentComponent({
   state: React.RefObject<UseReactComponentState>;
   emitter: EventEmitter;
   dev: boolean;
-}): React.ComponentType<any> {
-  return React.forwardRef<any, any>(function (externalProps: ExternalProps, ref: any) {
+}): React.ComponentType<any> & {
+  getDefinition: () => IComponentDefinition | undefined;
+} {
+  const componentType =  React.forwardRef<any, any>(function (externalProps: ExternalProps, ref: any) {
     const { children, ...passthroughProps } = externalProps;
     const [version, forceRender] = useReducer((s) => s + 1, 0);
     const cache = useRef<any>(externalProps || {});
@@ -66,7 +68,11 @@ function createReactComponentComponent({
           React.createElement(component.component, { ...passthroughProps, ref } as any, children)}
       </ReactComponentProvider>
     );
-  });
+  }) as any;
+
+  componentType.getDefinition = () => state.current?.component;
+
+  return componentType;
 }
 
 export default function useReactComponent<T = ExternalProps>(
@@ -82,7 +88,7 @@ export default function useReactComponent<T = ExternalProps>(
   const reactComponent = useRef<React.ComponentType<T> & {
     getDefinition: () => IComponentDefinition | undefined;
   }>(
-    createReactComponentComponent({ id: options?.id, state, emitter, dev: options?.dev || false }) as any,
+    createReactComponentComponent({ id: options?.id, state, emitter, dev: options?.dev || false }),
   );
 
   const forceRender = useCallback(() => {
@@ -95,7 +101,6 @@ export default function useReactComponent<T = ExternalProps>(
       return;
     }
     state.current.component = component;
-    reactComponent.current.getDefinition = () => component;
     forceRender();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [component]);
