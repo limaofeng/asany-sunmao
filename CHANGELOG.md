@@ -1,3 +1,7 @@
+## [1.0.42](https://github.com/limaofeng/asany-sunmao/compare/v1.0.41...v1.0.42) (2024-04-05)
+
+
+
 ## [1.0.41](https://github.com/limaofeng/asany-sunmao/compare/v1.0.40...v1.0.41) (2024-04-05)
 
 
