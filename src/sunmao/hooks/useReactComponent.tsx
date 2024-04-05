@@ -73,12 +73,16 @@ export default function useReactComponent<T = ExternalProps>(
   id: string,
   injectProps: IComponentBlockData[] = [],
   options?: IOptions,
-): React.ComponentType<T> {
+): React.ComponentType<T> & {
+  getDefinition: () => IComponentDefinition | undefined;
+} {
   const component = useComponent(id);
   const emitter = useMemo<EventEmitter>(() => new EventEmitter(), []);
   const state = useRef<UseReactComponentState>({ component, props: injectProps });
-  const reactComponent = useRef<React.ComponentType<T>>(
-    createReactComponentComponent({ id: options?.id, state, emitter, dev: options?.dev || false }),
+  const reactComponent = useRef<React.ComponentType<T> & {
+    getDefinition: () => IComponentDefinition | undefined;
+  }>(
+    createReactComponentComponent({ id: options?.id, state, emitter, dev: options?.dev || false }) as any,
   );
 
   const forceRender = useCallback(() => {
@@ -91,6 +95,7 @@ export default function useReactComponent<T = ExternalProps>(
       return;
     }
     state.current.component = component;
+    reactComponent.current.getDefinition = () => component;
     forceRender();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [component]);
