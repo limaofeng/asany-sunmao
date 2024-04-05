@@ -1,3 +1,12 @@
+## [1.0.41](https://github.com/limaofeng/asany-sunmao/compare/v1.0.40...v1.0.41) (2024-04-05)
+
+
+### Features
+
+* useReactComponent 返回组件定义信息 ([7a5fca5](https://github.com/limaofeng/asany-sunmao/commit/7a5fca5ba150ab7b1030672299c710a5c4c75b36))
+
+
+
 ## [1.0.40](https://github.com/limaofeng/asany-sunmao/compare/v1.0.39...v1.0.40) (2024-03-07)
 
 
